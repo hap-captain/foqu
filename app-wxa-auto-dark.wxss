@@ -1,0 +1,44 @@
+/* 
+此文件为开发者工具生成，生成时间: 2021/11/6 上午11:24:39
+使用方法：
+在 app.wxss 文件末尾引入样式
+```
+@import "./app-wxa-auto-dark.wxss";
+```
+ */
+
+@media (prefers-color-scheme: dark) {
+    page {
+        background-color: rgb(22, 22, 27);
+    }
+
+    .userinfo-avatar {
+        background-color: rgb(17, 17, 17);
+    }
+
+    .userinfo-nickname {
+        color: rgb(19, 125, 255);
+        background-color: rgb(17, 17, 17);
+    }
+
+    .uploader-text, .tunnel-text {
+        color: rgb(19, 125, 255);
+    }
+
+    .tunnel-text {
+        color: rgb(231, 231, 231);
+    }
+
+    .disable {
+        color: rgb(115, 115, 115);
+    }
+
+    .service {
+        background: rgb(0, 0, 0);
+    }
+
+    .ns {
+        color: rgb(17, 17, 17);
+        background: rgb(0, 0, 0);
+    }
+}

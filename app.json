@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/courseIndex/courseIndex",
+    "pages/index/index",
+    "pages/course/course",
+    "pages/side/plan/plan",
+    "pages/search/search",
+    "pages/side/classroom/classroom",
+    "pages/my-info/my-info",
+    "pages/message/message",
+    "pages/message/privateMessage/privateMessage",
+    "pages/personPage/personPage",
+    "pages/login/login",
+    "pages/detailPage/detailPage",
+    "pages/mine/mine",
+    "pages/put/put",
+    "pages/side/setting/setting",
+    "pages/side/history/history",
+    "pages/side/setting/aboutUs/aboutUs",
+    "pages/side/setting/suggest/suggest",
+    "pages/side/identification/identification",
+    "pages/side/myFollow/myFollow",
+    "pages/side/club/club",
+    "pages/side/hometown/hometown",
+    "pages/side/organ/organ",
+    "pages/side/map/map",
+    "pages/side/tips/tips",
+    "pages/side/hometown/detailPage/detailPage",
+    "pages/side/club/detailPage/detailPage",
+    "pages/side/fans/fans",
+    "pages/side/newStudent/newStudent",
+    "pages/side/findThings/findThings",
+    "pages/side/findThings/findPut/findPut",
+    "pages/side/findThings/inDetail/inDetail"
+  ],
+  "window": {
+    "backgroundColor": "#f6f6f6",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#f6f6f6",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "i-icon": "dist/icon/index",
+    "i-load-more": "dist/load-more/index",
+    "i-button": "dist/button/index"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#8a8a8a",
+    "selectedColor": "#0a95e6",
+    "list": [
+      {
+        "pagePath": "pages/courseIndex/courseIndex",
+        "text": "应用",
+        "iconPath": "pages/images/appbefore.png",
+        "selectedIconPath": "pages/images/app.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "广场",
+        "iconPath": "pages/images/homebefor.png",
+        "selectedIconPath": "pages/images/home.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "pages/images/messagebefore.png",
+        "selectedIconPath": "pages/images/message.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "pages/images/minebefor.png",
+        "selectedIconPath": "pages/images/mine.png"
+      }
+    ]
+  }
+}
