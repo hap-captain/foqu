@@ -1,0 +1,141 @@
+<!--miniprogram/pages/detailPage/detailPage.wxml-->
+<wxs module="tools" src="/utils/filter.wxs" />
+<!--自定义导航栏-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">详情</view>
+</cu-custom>
+
+
+
+<view class="allPage ">
+
+
+  <!-- <view class="user " catchtap="inPersonPage"> -->
+    <view class="user ">
+    <image src="{{content.dynamic.author.avatarPic}}" class="avatarPic " bindtap="inPersonPage"></image>
+    <view class="nameAndtime ">
+      <view class="nickName " bindtap="inPersonPage">{{content.dynamic.author.name}}
+      <text style="font-size:9px;color:grey;top:3px;position:relative" >\n{{content.dynamic.author.place}}</text>
+      </view>
+        <view class="time text-grey ">{{tools.timeChn(content.dynamic.time)}}
+
+      <view wx:if="{{!isAuthor}}">
+      <view class="" >
+        <view class="cu-tag1  radius {{isFollow?'line-grey':'bg-red'}}" bindtap="{{isFollow? 'cancelFollow':'follow'}}">{{isFollow?'已关注':' 关注 '}}</view>
+      </view>
+    </view>
+       
+      </view>
+    </view>
+  </view>
+  <view class="content1  ">
+    <view class="textType ">
+      <text selectable="true" bindtap="setPlaceholder">{{content.dynamic.inputData}}</text>
+    </view>
+    <view class="imageType">
+      <view wx:for="{{content.dynamic.imgList}}" wx:for-item="image">
+        <image mode="aspectFill" src="{{image}}" data-src="{{image}}" bindtap="previewImage" class="animationImg">
+        </image>
+      </view>
+    </view>
+    <view class="pra">
+      <text style="margin-right:7px;color:#EF5D30;font-size:13px;float:right" bindtap="deleDynamic" wx:if="{{isAuthor}}">删除</text>
+      <i-icon type="{{content.love? 'praise_fill':'praise'}}" bindtap="dianzan" />
+      <text class="praiseType text-gray" bindtap="dianzan">{{content.dynamic.praise}}</text>
+      <i-icon type="warning" bindtap="warning" />
+      <text class="warnType text-gray" bindtap="warning">举报</text>
+    </view>
+    <modal hidden="{{hiddenmodalput}}" title="举报该帖子" confirm-text="确定举报" cancel-text="取消" bindcancel="cancelM"
+      bindconfirm="confirmM">
+      <input bindinput='warnText' type='text' placeholder="请输入举报理由（不少于10字）" auto-focus />
+    </modal>
+
+
+  </view>
+
+  <view class="cu-bar bg-white solid-bottom history feedBack  ">
+    <view class="action" bindtap="setPlaceholder">
+      <text class="cuIcon-title text-blue "></text>回复（{{commentNum}}）
+    </view>
+  </view>
+  <!-- 评论区 -->
+  <view wx:for="{{content.dynamic.comment}}" wx:for-index="index1" class="comment animationFade">
+    <view class="user " catchtap="inPersonPage1" data-openid="{{item.openid}}">
+      <image src="{{item.avatarPic}}" class="avatarPic "></image>
+      <view class="nameAndtime">
+        <view class="nickName">{{item.name}}</view>
+        <view class="time text-grey">{{tools.timeChn(item.time)}}</view>
+      </view>
+    </view>
+
+    <!-- 回复动态的评论 -->
+    <view class="textType2" bindlongtap="{{commenterOpenid == item.openid?'delComment':''}}" bindtap="huifucomment"
+        data-index="{{index1}}" data-openid="{{item.openid}}" data-name="{{item.name}}" data-item="{{item}}"
+        data-commentlv="{{1}}">
+        <text >{{item.content}}</text>
+      </view>
+
+    <!-- 评论的回复 -->
+    <view class="huifuLen animationFade" bindtap="openCloseComment"
+      wx:if="{{content.dynamic.comment[index1].huifuList.length>8 && !content.dynamic.comment[index1].openClose}}"
+      data-index="{{index1}}">
+      <text style="font-size:10px">共有{{content.dynamic.comment[index1].huifuList.length}}条评论</text>
+      <text class="cuIcon-playfill">展开评论</text>
+    </view>
+
+    <view class="huifuType animationFade" wx:for="{{content.dynamic.comment[index1].huifuList}}" wx:for-index="index"
+      data-index="{{index}}">
+
+        <!-- 评论数大于5的 -->
+        <view wx:if="{{content.dynamic.comment[index1].huifuList.length>8 && content.dynamic.comment[index1].openClose}}">
+        <text class="text-blue" catchtap="inPersonPage1" data-openid="{{item.openid}}">{{item.commentName}}</text>
+        <text wx:if="{{ content.dynamic.comment[index1].openid !=item.toOpenid && item.openid!=item.toOpenid}}"> 回复 </text>
+        <text class="text-blue" catchtap="inPersonPage1" data-openid="{{item.toOpenid}}"
+          wx:if="{{ content.dynamic.comment[index1].openid !=item.toOpenid && item.openid!=item.toOpenid }}">{{item.toName}}</text>
+        <text> ：</text>
+        <text bindtap="huifucomment" data-name="{{item.commentName}}" data-commentlv="{{2}}"
+          bindlongtap="{{commenterOpenid == item.openid?'delhuifu':''}}" data-index="{{index}}" data-index1="{{index1}}" data-item="{{item}}" >{{item.text}} data-openid="{{item.openid}}"</text>
+          
+      </view>
+
+      <!-- 评论数少于5的 -->
+       <view  wx:if="{{content.dynamic.comment[index1].huifuList.length<=8}}">
+        <text class="text-blue" catchtap="inPersonPage1" data-openid="{{item.openid}}">{{item.commentName}}</text>
+        <text wx:if="{{ content.dynamic.comment[index1].openid !=item.toOpenid && item.openid!=item.toOpenid}}"> 回复 </text>
+        <text class="text-blue" catchtap="inPersonPage1" data-openid="{{item.toOpenid}}"
+          wx:if="{{ content.dynamic.comment[index1].openid !=item.toOpenid && item.openid!=item.toOpenid }}">{{item.toName}}</text>
+        <text> ：</text>
+        <text selectable="true" bindtap="huifucomment" data-name="{{item.commentName}}"
+          bindlongtap="{{commenterOpenid == item.openid?'delhuifu':''}}" data-index="{{index}}" data-index1="{{index1}}" data-openid="{{item.openid}}" data-item="{{item}}" data-commentlv="{{2}}">{{item.text}}</text>
+      </view>  
+    
+    </view>
+
+
+
+    <view class="huifuLen" bindtap="openCloseComment"
+      wx:if="{{content.dynamic.comment[index1].huifuList.length>8 && content.dynamic.comment[index1].openClose}}"
+      data-index="{{index1}}">
+      <text class="cuIcon-usefullfill">收起评论</text>
+    </view>
+  </view>
+  <view class="loadMore animationImg" wx:if="{{!content.dynamic.comment.length}}">
+    <i-load-more tip="还没有回复哦" loading="{{ false }}" />
+  </view>
+  <view class="loadMore" wx:else>
+    <i-load-more tip="" loading="{{ false }}" />
+  </view>
+</view>
+
+<view class="box animationEnFeebBack">
+  <view class="cu-bar input">
+    <view class="action">
+    </view>
+    <view class="pinglunBox bg-gray">
+      <textarea maxlength="-1" class="solid-bottom" auto-height style="height: 24px;width:100%;top: 3px;"
+        placeholder="{{placeholder}}" bindinput="textareaAInput" value="{{searchinput}}" fixed="true" cursor-spacing="10" />
+    </view>
+    <button class="cu-btn bg-blue light shadow-blur animationEnBtn" size="mini" bindtap="formSubmit">发送</button>
+  </view>
+</view>
