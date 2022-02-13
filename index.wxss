@@ -1,0 +1,533 @@
+page {
+  background-color: #F8F8FF;
+  height: auto;
+}
+
+
+.container1{
+  background-color: #F8F8FF;
+  width: auto;
+  min-height: 100vh;
+}
+
+.tabsBox {
+  background-color: #F8F8FF;
+}
+
+
+text {
+  position: relative;
+  top: 2rpx;
+  line-height: 50rpx;
+}
+
+.card-swiper {
+  height: 380rpx !important;
+  position: relative;
+  top: 0px;
+}
+.search {
+  margin-right: 0rpx;
+  font-size: 17px;
+}
+
+.tabs {
+  width: 40%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.allPage {
+  margin-bottom: 180rpx;
+  position: relative;
+  top: 0rpx;
+}
+
+.messageAndPraise {
+  margin: 10px 10px;
+}
+
+.footer {
+  position: relative;
+  right: 0rpx;
+  width: 85%;
+  height: 25px;
+  top: 0rpx;
+  padding: 0px 16px;
+}
+
+.havePic {
+  position: relative;
+  width: 74%;
+  height: 139rpx;
+}
+
+.pic {
+  position: absolute;
+  float: right;
+  top: 6%;
+  right: 10rpx;
+  height: 139rpx;
+  width: 183rpx;
+  border-radius: 6%;
+}
+
+.header {
+  position: relative;
+  margin: -6px;
+  width: 83%;
+  height: 45px;
+  z-index: 10;
+}
+.praiseType {
+  float: left;
+  position: relative;
+  width: 40rpx;
+  top: -3rpx;
+  right: 9px;
+  margin: 0rpx 3rpx;
+}
+
+.i-card {
+  margin: 2px 5px;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  border: 0rpx solid #dddee1;
+  border-radius: 5px
+}
+
+.i-card-full {
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-radius: 0
+}
+
+.i-card-header {
+  display: flex;
+  padding: 10px 15px;
+  align-items: center;
+
+}
+
+.i-card-header-content {
+  flex: 1;
+  text-align: left
+}
+
+.i-card-header-thumb {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-size: cover;
+  vertical-align: middle
+}
+
+.i-card-header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #1c2438
+}
+
+.i-card-header-extra {
+  flex: 2;
+  position: relative;
+  text-align: right;
+  top: -19rpx;
+  font-size: 9px;
+  color: #80848f;
+}
+
+.i-card-body {
+  position: relative;
+  padding: 3px 16px;
+  height: auto;
+  color: #495060;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.i-card-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-top-width: 1px
+}
+
+.i-card-footer {
+  position: relative;
+  float: right;
+  width: 80%;
+  padding: 6px 16px;
+  color: #80848f;
+  font-size: 12px
+}
+
+.cu-list.menu {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cu-dialog {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  width: 680rpx;
+  max-width: 100%;
+  background-color: #f8f8f8e0;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.cu-list.menu>.cu-item {
+  border-bottom: 1px solid #80808061;
+  position: relative;
+  display: flex;
+  padding: 0 30rpx;
+  min-height: 120rpx;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f800;
+}
+
+.cu-list>.cu-item {
+  transition: all .6s cubic-bezier(0.59, 0.88, 0.76, 0.66) 0s;
+  transform: translateX(0rpx);
+}
+
+.cu-modal.drawer-modal .cu-dialog {
+  height: 100%;
+  min-width: 200rpx;
+  border-radius: 0;
+  margin: initial;
+  transition-duration: 0.8s;
+}
+
+.cu-list.menu>.cu-item .content {
+  font-size: 30rpx;
+  line-height: 1.6em;
+  flex: 1;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.animationRight {
+  animation: fadeInRight 1s 1;
+}
+
+.animationLeft {
+  animation: fadeInLeft 1s 1;
+}
+
+.animationEn {
+  animation: fadeInUp 2s 1;
+}
+
+.animationLaunchStar{
+  animation: bounceInUp 2s 1;
+}
+.animationLaunchEnd{
+  animation: bounceOutUp 2s 1;
+}
+.animationTop{
+  animation: bounce 4s infinite;
+}
+
+.toTop{
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+}
+
+.picList{
+  position: relative;
+  margin-right:5px;
+  border-radius: 5px;
+}
+.cu-avatar.sm {
+  width: 45rpx;
+  height: 45rpx;
+  font-size: 1em;
+}
+.cu-card.article>.cu-item .title {
+  font-size: 30rpx;
+  font-weight: 900;
+  color: var(--black);
+  line-height: 54rpx;
+  padding: 0 30rpx;
+}
+
+.cu-list.grid>.cu-item [class*=cuIcon] {
+  position: relative;
+  display: block;
+  margin-top: 0rpx;
+  width: 102%;
+  font-size: 67rpx;
+}
+.cu-list.grid.no-border {
+  padding: 0rpx 10rpx;
+}
+.putTag
+{
+  position:fixed;
+  width: 45px;
+  height: 45px;
+  bottom: 50px;
+  right: 20px;
+}
+.putTag image
+{
+  width: 45px;
+  height: 45px;
+}
+.card-swiper swiper-item {
+  width: 610rpx !important;
+  left: 70rpx;
+  box-sizing: border-box;
+  padding: 10rpx 0rpx 60rpx;
+  overflow: initial;
+}
+
+
+
+
+.cu-form-group picker .picker {
+  line-height: 88rpx;
+  font-size: 27rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+  margin-left: 5px;
+}
+.cu-form-group {
+  background-color: var(--white);
+  padding: 1rpx 30rpx;
+  display: flex;
+  align-items: center;
+  width: 110%;
+  height: 30px;
+  min-height: 50rpx;
+  justify-content: space-between;
+}
+.card-swiper {
+  height: 310rpx !important;
+  position: relative;
+  top: 0px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.card-swiper swiper-item {
+  width: 610rpx !important;
+  left: 70rpx;
+  box-sizing: border-box;
+  padding: 6rpx 0rpx 6rpx;
+  overflow: initial;
+}
+
+.tabs{
+  position: relative;
+  width: 100%;
+  float: left;
+  height: 30px;
+  margin-top: 10px;
+}
+.text-center {
+  text-align: center;
+  padding-top: 9px;
+}
+
+.column {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: #fff;
+  border-bottom: solid 1px #eee;
+  top: 0;
+  left: 0;
+  z-index: 100;
+ }
+ .fixed {
+  position: fixed;
+ }
+ .grid.col-3.grid-square>view {
+  padding-bottom: calc((100% - 40rpx)/3);
+  height: 0;
+  width: calc((100% - 20rpx)/3);
+}
+.grid.grid-square>view {
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 0rpx;
+  position: relative;
+  overflow: hidden;
+}
+.grid.col-2.grid-square>view {
+  padding-bottom: calc((100% - 40rpx)/2);
+  height: 0;
+  width: calc((100% - 10rpx)/2);
+}
+.cu-card.dynamic {
+  display: block;
+  margin-top: 10px;
+}
+.cu-card.dynamic>.cu-item>.text-content {
+  padding: 0 3rpx 0;
+  max-height: 6.4em;
+  overflow: hidden;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.time
+{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.iconType
+{
+  font-size: 30px;
+}
+.margin-lr-xs {
+  margin-left: 10rpx;
+  margin-right: 50rpx;
+}
+.numType
+{
+  position:relative;
+  left: -20px;
+}
+.commentArea
+{
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  border-top: solid 0.7px rgb(197, 191, 191);
+  margin-bottom: 15px;
+}
+.commentType
+{
+  margin-top: 6px;
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.modalType
+{
+  margin: 0 auto;
+  width: 40px;
+  height: 32px;
+}
+.padding-xl1 {
+  padding: 10rpx;
+}
+.cu-bar {
+  display: flex;
+  position: relative;
+  margin-top: 5px;
+  align-items: center;
+  min-height: 60rpx;
+  width: 48%;
+  justify-content: space-between;
+  margin: 0 auto;
+} 
+
+.tabs
+{
+  position: relative;
+  width: 100%;
+  height: 80%;
+ 
+  left: 15px;
+  align-items: left;
+}
+
+
+
+
+.nav-switch-style{
+  color: black;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.style-roll{
+  background-color: rgb(130, 177, 247);
+  padding: 100rpx 0;
+  text-align: center;
+  height: 900px;
+}
+.tabsItem
+{
+  position: relative;
+  width: 27%;
+  left: -43px;
+  height: 30px;
+  text-align: center;
+}
+.textLine
+{
+  position: relative;
+  width: 80%;
+  height: 9px;
+  background-color: #14e2e494;
+  z-index: 101;
+  top: -2px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.padding-xs {
+  padding: 10rpx;
+  margin: 0 auto;
+}
+.cu-tag {
+  font-size: 28rpx;
+  vertical-align: middle;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0rpx 16rpx;
+  height: 48rpx;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  white-space: nowrap;
+}
