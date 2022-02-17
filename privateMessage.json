@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "chatroom": "../../../colorui/components/chatroom/chatroom"
+  }
+}
