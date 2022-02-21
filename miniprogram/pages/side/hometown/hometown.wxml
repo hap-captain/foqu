@@ -1,0 +1,21 @@
+<!--miniprogram/pages/side/club/club.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">同乡会</view>
+</cu-custom>
+
+<view class="cu-bar bg-white solid-bottom ">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> 快加入你的同乡会吧
+    </view>
+  </view>
+
+<view class="pageContainer">
+  <view class="grid col-2 " >
+    <view wx:for="{{list}}" wx:for-index="index" class="bg-img padding-top-xl flex align-end " style="background-image: url({{item.listPic}});height: 150px;" data-id="{{item._id}}" data-index="{{index}}" bindtap="inEssay">
+    <view class="bg-shadeBottom padding padding-top-xl flex-sub">
+      {{item.name}}
+    </view>
+  </view>
+</view>
+</view>

@@ -1,0 +1,252 @@
+
+page{background-color:#F8F8FF;height: auto;}
+
+/**index.wxss**/
+
+.card{
+  height: 720rpx;
+  background-color: #F8F8FF;
+}
+.praiseType {
+  float: left;
+  position: relative;
+  width: 40rpx;
+  top: -3rpx;
+  right: 9px;
+  margin: 0rpx 3rpx;
+}
+
+text{position: relative;top:2rpx;line-height: 50rpx;}
+
+.search{
+  position: flex;
+  float: right;
+  z-index: 999;
+}
+
+/* 入场动画 */
+.animationRight{
+  animation: fadeIn 1s 1;
+}
+.btnAnimation{
+  animation: zoomIn 2s 1;
+}
+.animationEn{
+  animation: fadeInUp 1.5s 1;
+}
+
+
+.avatar{
+  margin-top: 10rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+.tabs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.allPage{
+  top: -1rpx;
+  padding-bottom: 80rpx;
+}
+.user-avatar {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 50%;
+  overflow:hidden;
+}
+.screen-swiper {
+  position: relative;
+    top: 46px;
+    min-height: 377rpx;
+}
+.messageAndPraise{
+  margin: 10px 10px;
+}
+.footer {
+  position: relative;
+  right: 0rpx;
+  width: 85%;
+  height: 25px;
+  top: 0rpx;
+  padding: 0px 16px;
+}
+.havePic{
+  position: relative;
+  width:74%;
+  height: 139rpx;
+}
+.pic {
+    position: absolute;
+    float: right;
+    top: 3%;
+    right: 10rpx;
+    height: 139rpx;
+    width: 183rpx;
+    border-radius: 6%;
+}
+.header{
+  position: relative;
+  margin: -6px;
+  width: 83%;
+  height: 45px;
+  z-index: 10;
+}
+.barFixed{
+  /* position: fixed;
+  top: 60px;
+  margin-top: 0;
+  z-index: 99999; */
+  width: 100%;
+  height: 45px;
+  position: fixed;
+  top: 66px;
+  margin-top: 0;
+  z-index: 99999;
+}
+.bar
+{
+  position: relative;
+  top: 64rpx;
+}
+.textPage{
+  position: relative;
+  z-index:0;
+}
+
+.loadMore{
+  position: relative;
+  width: 100%;
+  height: 69rpx;
+}
+
+.i-card {
+  margin:2px 5px;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  border: 0rpx solid #dddee1;
+  border-radius: 5px
+}
+
+.i-card-full {
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-radius: 0
+}
+
+.i-card-header {
+  display: flex;
+  padding: 10px 15px;
+  align-items: center;
+
+}
+
+.i-card-header-content {
+  flex: 1;
+  text-align: left
+}
+
+.i-card-header-thumb {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-size: cover;
+  vertical-align: middle
+}
+
+.i-card-header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #1c2438
+}
+
+.i-card-header-extra {
+  flex: 2;
+  position: relative;
+  text-align: right;
+  top: -19rpx;
+  font-size: 9px;
+  color: #80848f;
+}
+
+.i-card-body {
+  position: relative;
+  padding: 3px 16px;
+  height: auto;
+  color: #495060;
+  font-size: 14px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
+
+.i-card-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-top-width: 1px
+}
+
+.i-card-footer {
+  position: relative;
+    float: left;
+    width: 59%;
+    padding: 12px 0px;
+    color: #80848f;
+    font-size: 12px;
+}
+.user-avatar {
+  width: 68rpx;
+    height: 68rpx;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.userName{
+  position: absolute;
+  left: 113rpx;
+  top: 23rpx;
+  width: 70%;
+  height: 20%;
+  font-size: 13px;
+  color: #1c2438;
+}
+.userInfo
+{
+  position: absolute;
+  left: 113rpx;
+  top: 65rpx;
+  width: 50%;
+  height: 14%;
+  font-size: 10px;
+  color: #80848f;
+}
+.nameFooter{
+  
+  position: fixed; 
+  bottom:0;
+  margin-bottom: 20rpx;
+  text-align: center;
+  left: 0;
+  right: 0;
+  font-size: 30rpx;
+}

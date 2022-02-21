@@ -1,0 +1,2 @@
+<!--pages/index/essay/essay.wxml-->
+<web-view src="{{url}}"></web-view>

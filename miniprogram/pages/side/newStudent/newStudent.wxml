@@ -1,0 +1,52 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">新生易知</view>
+</cu-custom>
+
+                <view style="top:{{CustomBar-30}}px;position:relative">
+
+                    <view class="cu-list grid col-2 no-border">
+                       
+                        <view class="cu-item animation-reverse {{animation1}}" wx:key bindtap="inOrgan">
+                            <view class="cuIcon-circlefill text-orange ">
+                            </view>
+                            <text>机构</text>
+                        </view>
+                        <view class="cu-item animation-reverse {{animation2}}" wx:key bindtap="inClub">
+                            <view class="cuIcon-upstagefill text-yellow ">
+                            </view>
+                            <text>社团</text>
+                        </view>
+                        <view class="cu-item animation-reverse {{animation3}}" wx:key bindtap="inHometown">
+                            <view class="cuIcon-group_fill text-olive ">
+                            </view>
+                            <text>同乡会</text>
+                        </view>
+                        <view class="cu-item" class="cu-item animation-reverse {{animation4}}" wx:key bindtap="inMap">
+                            <view class="cuIcon-picfill text-cyan ">
+                            </view>
+                            <text>校园地图</text>
+                        </view>
+                    </view> 
+
+                    <!--新生指南-->
+                     <view>
+                        <view class="cu-list menu1">
+                            <view class="content">
+                                <text class="cuIcon-circlefill text-green"></text>
+                                <text class="text-black" style=""><text style="margin-left:8px">新生指南</text></text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="nav-list">
+                        <view class="list shadow-warp bg-white" wx:for="{{essay}}" wx:for-index="index" bindtap="inEssay" data-url="{{item.url}}">
+                            <view class="imgType">
+                                <image mode="aspectFill" src="{{item.src}}"></image>
+                            </view>
+                            <view>
+                                <text class="titleType">{{item.title}}</text>
+                                <view class="titleType1">{{item.subtitle}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>

@@ -1,0 +1,30 @@
+<!--pages/side/findThings/inDetail/inDetail.wxml-->
+<wxs module="tools" src="/utils/filter.wxs" />
+
+
+<view class="bg " style="background:url('{{bgImage}}')  0 / cover fixed; ">
+<cu-custom bgColor="" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">详情</view>
+</cu-custom>
+
+ <view class="box">
+ <view class="care">
+  <view class="head">{{detailData.thingName}}</view>
+  <view class="detail">{{detailData.detailInfo}}</view>
+  <view class="grid col-3 grid-square" style="margin-top: 15px;">
+      <view class="bg-img" wx:for="{{detailData.imgList}}" >
+      <image src="{{item}}" style="position: relative;width: 100%;height: 104px;" data-src="{{detailData.imgList}}" bindtap="previewImage" mode="aspectFill"></image>
+      </view>
+  </view>
+  <text class="time">{{tools.timeChn(detailData.time)}}</text>
+  <text class="time" style="color: red; margin-left: 5px;" wx:if="{{detailData._openid == openid}}" data-id="{{detailData._id}}" bindtap="delete">删除</text>
+  <text class="time" style="color: blue; margin-left: 5px;" wx:if="{{detailData._openid == openid && !detailData.finish}}"  data-id="{{detailData._id}}" bindtap="finish">设为成功</text>
+  <view class="link">
+  <text class="linkText">联系方式：</text>
+  <text selectable='true'>{{detailData.linkInfo}}</text>
+  <button class="cu-btn round line-purple button-hover" style="margin-left: 10px; width: 65px; height: 25px;"  bindtap='onClick'>复制</button>
+  </view>
+  </view>
+</view>
+</view> 

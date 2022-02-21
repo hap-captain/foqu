@@ -1,0 +1,96 @@
+/**index.wxss**/
+
+page {
+  background-color: white;
+  padding-bottom: 60rpx;
+}
+
+.list{
+  background-color: #fff;
+  margin-bottom: 26rpx;
+}
+.list-letf{
+  font-size: 34rpx;
+}
+
+.list-content{
+  height: 97rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  border-bottom: 0.1px solid #ddd;
+  background-color: #fff;
+}
+.list-right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-right-text{
+  font-size: 34rpx;
+  color: #999;
+}
+.arrow {
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 4rpx solid #bdbdbd;
+  border-right: 4rpx solid #bdbdbd;
+  transform: rotate(45deg);
+  /* position: absolute; */
+  /* right: 20rpx; */
+  margin: 0 40rpx 0 10rpx;
+}
+.save-tip{
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 30rpx;
+  padding: 30rpx;
+}
+.cu-btn {
+  position: relative;
+  border: 0rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 47rpx;
+  font-size: 33rpx;
+  height: 64rpx;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  overflow: visible;
+  margin-left: initial;
+  transform: translate(0rpx, 0rpx);
+  margin-right: initial;
+}
+
+.footer {
+
+  position: fixed;
+  text-align: center;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  font-size: 30rpx;
+}
+.animationEn{
+  animation: fadeInRight 1s 1;
+}
+.animationEn1{
+  animation: fadeInRight 1s 1;
+}
+.animationEn2{
+  animation: fadeInRight 1.5s 1;
+}
+.animationEn3{
+  animation: fadeInRight 2s 1;
+}
+.animationBtn1{
+  animation:  zoomIn 2s 1;
+}
+.animationBtn2{
+  animation:  zoomIn 4s 1;
+}

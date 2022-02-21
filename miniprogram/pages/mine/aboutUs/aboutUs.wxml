@@ -1,0 +1,24 @@
+<!--pages/mine/aboutUs/aboutUs.wxml-->
+<!--自定义导航栏-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">关于我们</view>
+</cu-custom>
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于创梦未来团队</view>
+  <view class='text-content'>
+    <view>佛趣广场是由佛大在校学生团队——创梦未来团队开发与运营，是一款非佛大官方的小程序。</view>
+    <view class='margin-top-sm'>在佛大，并不缺乏有理想、有能力、有才华的学生，我们都希望在诺大的佛大校园中能够找到一群志同道合的人，能做一番事情。因此，佛趣广场致力为佛大学子构建相互认识、相互交流的桥梁，以及提供便捷的校园生活服务。
+创梦未来团队由一群具有社会责任感和满怀理想的佛大在校学生组成，团队秉承着服务佛大、为同学做实事的初心，每个成员都将自己的所知所学，学以致用，脚踏实地去为我们佛大人服务。
+</view>
+    <view class='margin-top-sm'>我们叫佛趣广场，我们叫创梦未来。</view>
+    <view class='margin-top-sm'>如果你也满怀着热血，想要更加了解我们，加入我们，请关注我们的公众号和视频号。</view>
+    <view class='text-center'>
+   <view class='margin-top-sm'>公众号</view>
+   <image style="position:relative;width:220px;height:220px" src="{{gonzonhao}}" bindtap="previewImage" data-src="{{gonzonhao}}"></image>
+   <view class='margin-top-sm'>视频号</view>
+   <image style="position:relative;width:212px;height:212px" src="{{shipinhao}}" bindtap="previewImage" data-src="{{shipinhao}}"></image>
+  </view>
+  </view>
+</view>

@@ -1,0 +1,129 @@
+
+
+.i-card {
+  display: block;
+  background-color: var(--white);
+  border-radius: 30rpx;
+  margin:30rpx 25rpx 1rpx 25rpx;
+  box-shadow: 0px 0px 3px 1px #a9a9a954;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  /* background: #fff;
+  border: 0rpx solid #dddee1; */
+
+}
+
+.i-card-full {
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-radius: 0
+}
+
+.i-card-header {
+  display: flex;
+  padding: 10px 15px;
+  align-items: center;
+
+}
+
+.i-card-header-content {
+  flex: 1;
+  text-align: left
+}
+
+.i-card-header-thumb {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-size: cover;
+  vertical-align: middle
+}
+
+.i-card-header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #1c2438
+}
+
+.i-card-header-extra {
+  flex: 2;
+  position: relative;
+  text-align: right;
+  top: -19rpx;
+  font-size: 9px;
+  color: #80848f;
+}
+
+.i-card-body {
+  position: relative;
+  padding: 3px 16px;
+  height: auto;
+  color: #495060;
+  font-size: 14px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
+
+.i-card-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-top-width: 1px
+}
+
+.i-card-footer {
+  position: relative;
+    float: left;
+    width: 59%;
+    padding: 12px 0px;
+    color: #80848f;
+    font-size: 12px;
+}
+.user-avatar {
+  border: 5rpx solid #F8F8FF;
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  top: 9px;
+  width: 73rpx;
+  height: 73rpx;
+  border-radius: 50%;
+  overflow: hidden;
+
+}
+.userName{
+  position: absolute;
+  left: 113rpx;
+  top: 23rpx;
+  width: 70%;
+  height: 20%;
+  font-size: 13px;
+  color: #1c2438;
+}
+.userInfo
+{
+  position: absolute;
+  left: 113rpx;
+  top: 65rpx;
+  width: 50%;
+  height: 14%;
+  font-size: 10px;
+  color: #80848f;
+}

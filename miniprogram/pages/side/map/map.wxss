@@ -1,0 +1,17 @@
+/* miniprogram/pages/side/map/map.wxss */
+
+.cu-list.menu>.cu-item .content {
+  font-size: 30rpx;
+  line-height: 1.6em;
+  flex: 1;
+  text-align: center;
+}
+.footer {
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  font-size: 23rpx;
+}

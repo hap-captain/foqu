@@ -1,0 +1,63 @@
+<!--miniprogram/pages/personPage/personPage.wxml-->
+<wxs module="tools" src="/utils/filter.wxs" />
+<!--自定义导航栏-->
+
+
+  <cu-custom  bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">{{userinfo.userinfo.name}}的主页</view>
+  </cu-custom>
+  <view class="topPage animationEn">
+    <image class="bgPic"
+      src="https://786c-xly-3g3sm5xb43ed094b-1305336006.tcb.qcloud.la/system/326b9a70-7630-438b-89e4-f38e8cfafa2e.jpeg?sign=9053ff06514adb83d8401bf236c54d93&t=1620052798">
+    </image>
+    <view class="padding-xs " wx:if="{{persionOpenid!=myOpenid}}">
+
+        <view class="cu-tag  round bg-red privateMessage" bindtap="sentPrivateMessage">私信</view>
+        <view class="cu-tag  round {{isFollow?'line-grey':'bg-red'}}" bindtap="{{isFollow? 'cancelFollow':'follow'}}">{{isFollow?'已关注':' 关注 '}}</view>
+
+      </view>
+    <view class="userInfo animationEn">
+      <image class="userimage " src="{{userinfo.userinfo.avatarPic}}"></image>
+      <view class="name">{{userinfo.userinfo.name}}</view>
+      <view class="cu-item signature">
+        <view class="content ">
+          <text class="text-grey signatureText ">{{userinfo.signature}}</text>
+  
+        </view>
+      </view>
+      <!-- <view class="btn1" bindtap="{{isFollow? 'cancelFollow':'follow'}}">{{isFollow?'已关注':'关注'}}</view> -->
+      </view>
+    <view class=" waveColor shadow-blur animationEn">
+      <image
+        src="https://786c-xly-3g3sm5xb43ed094b-1305336006.tcb.qcloud.la/system/wave.gif?sign=a721847317de5b87a4d4b4b51bd1d588&t=1620052524"
+        mode="scaleToFill" class="gif-black response" style="height:44px"></image>
+    </view>
+  </view>
+
+
+  <view class="cu-bar bg-white solid-bottom historyCard animationEn">
+    <view class='action'>
+      <text class='cuIcon-titles text-orange '></text>动态
+    </view>
+  </view>
+
+<view class="bg-white">
+
+  <view class="cu-card dynamic dynamicCard " wx:for="{{historyDymaic}}" wx:for-index="index"
+    bindtap="inDetail" data-id="{{item._id}}" data-index="{{index}}" style=" ">
+    <view class="cu-item shadow">
+      <view class="text-content" style="padding-left:30rpx;padding-right:30rpx; margin-bottom:20rpx;margin-top:40rpx">
+        {{item.dynamic.inputData}}</view>
+      <view wx:if="{{item.dynamic.imgList.length}}">
+        <image src="{{item.dynamic.imgList[0]}}" class="bg-img animationEnImg"
+          style="border-radius:30rpx;margin-left:20rpx;margin-bottom:30rpx" mode="aspectFill"></image>
+      </view>
+      <view class="text-gray text-sm text-right " style="padding-left:20rpx;padding-right:20rpx; margin-bottom:20rpx">
+        <text class="timeType">{{tools.timeChn(item.dynamic.time)}}</text>
+        <text class="cuIcon-appreciatefill margin-lr-xs"></text>{{item.dynamic.praise}}
+        <text class="cuIcon-messagefill margin-lr-xs"></text>{{item.commentNum}}
+      </view>
+    </view>
+  </view>
+</view>

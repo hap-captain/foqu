@@ -1,0 +1,98 @@
+
+
+<!--自定义导航栏-->
+<view class="container">
+<view  class="topPic">
+<image src="../images/topImg.png"></image>
+</view>
+<view class="week light" style="top:{{CustomBar-40}}px">
+	<view class="weekType animationLeft">
+		{{currentWeek}} {{days[todayWeek-1]}}</view>
+</view>
+
+<view style="position: absolute;top: 145px; width: 100%;height: auto;">
+<view class="cu-list grid col-3 no-border">
+	<view class="cu-item animation-reverse {{animation0}}" wx:key bindtap="inClassroom">
+		<view class="iconPic">
+		<image src="../images/emptyClass.png"></image>
+		</view>
+		<text>空教室查询</text>
+	</view>
+	<view class="cu-item animation-reverse {{animation1}}" wx:key bindtap="inSecondHand">
+		<view class="iconPic">
+		<image src="../images/secondHand.png"></image>
+		</view>
+		<text>闲置物品</text>
+	</view>
+	<view class="cu-item animation-reverse {{animation2}}" wx:key bindtap="inFindThing">
+		<view class="iconPic">
+		<image src="../images/findThing.png"></image>
+		</view>
+		<text>失物招领</text>
+	</view>
+	<view class="cu-item animation-reverse {{animation3}}" wx:key bindtap="inNewStudent">
+		<view class="iconPic">
+		<image src="../images/newStudent.png"></image>
+		</view>
+		<text>新生易知</text>
+	</view>
+	<view class="cu-item" class="cu-item animation-reverse {{animation4}}" wx:key bindtap="inSchoolTime">
+		<view class="iconPic">
+		<image src="../images/watch.png"></image>
+		</view>
+		<text>校历作息</text>
+	</view>
+	<view class="cu-item" class="cu-item animation-reverse {{animation5}}" wx:key bindtap="inMore">
+		<view class="iconPic">
+		<image src="../images/more.png"></image>
+		</view>
+		<text>更多</text>
+	</view>
+</view>
+
+<view class="courseBox  animation-scale-up">
+
+	<view>
+		<text class="ontTextTitle ">
+			-<text class="head">今日课表</text>-
+		</text>
+		<view class="allCourse animationBtnEn  ">
+			<navigator url="/pages/course/course">
+				<view> 完整课表</view>
+			</navigator>
+		</view>
+	</view>
+
+	<view class='invite' wx:if="{{!tip}}">
+	 <text class="cuIcon-roundclosefill lg text-gray tipText" bindtap="changTip"></text>
+       点击查看本学期的课程安排
+    </view>
+
+	<view class="course-body ">
+		<view class="course-tip" wx:if="{{!myClass&&showTip}}" bindtap="toMyInfo">您未绑定班级信息，点我绑定</view>
+		<view class="course-tip" wx:elif="{{courseData.length==0&&showTip}}">{{tipStr}}</view>
+
+
+	
+		<view class="course-list" wx:else>
+			<view class="cu-timeline" wx:for="{{courseData}}" wx:for-item="course" wx:for-index="i" wx:key="_id">
+				<view class=" cu-tag bg-mauve light round text-center animationBtnEn" style="margin-left:20rpx" ><text>{{course.place}}</text></view>
+				<view class="cu-item text-cyan animationCard">
+					<view class="  card">
+						<view class="cu-capsule ">
+							<view class="cu-tag bg-blue light  box1">{{time[course.beginTime-1][0]}}-{{time[course.endTime-1][1]}}</view>
+							<view class="cu-tag bg-cyan light  ">{{course.teacher}}</view>
+							<view class="cu-tag  bg-olive light box2">{{course.weeks}}</view>
+						</view>
+						<view class="margin-top name" >{{course.name}}
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+
+</view>
+</view>
+</view>

@@ -1,0 +1,23 @@
+<!--miniprogram/pages/side/hometown/detailPage/detailPage.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">详情</view>
+</cu-custom>
+<view class="pageContainer">
+
+<view class='margin-xl bg-white padding-xl card animationEn'>
+  <view class='text-center margin-bottom text-lg  text-grey'>{{connent.name}}</view>
+  <view class='text-content'>
+    <view class='text-center'>
+   <view class='margin-top-sm'>同乡会负责人微信二维码</view>
+   <image wx:for="{{connent.wxPic}}" class="animationEnCard"style="position:relative;width:220px;height:220px" src="{{item}}" bindtap="previewImage" data-src="{{item}}"></image>
+   <view class='margin-top-sm'>同乡会负责人微信号</view>
+   <view wx:for="{{connent.wxcode}}" ><text selectable="true">{{item}}</text></view>
+  </view>
+  </view>
+</view>
+
+<view class="footer animationEn">
+  © 创梦未来 2020-2021
+</view>
+</view>

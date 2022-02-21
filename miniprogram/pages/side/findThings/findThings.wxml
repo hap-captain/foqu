@@ -1,0 +1,149 @@
+<!--pages/side/findThings/findThings.wxml-->
+<wxs module="tools" src="/utils/filter.wxs" />
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+		<view slot="backText">返回</view>
+		<view slot="content">失物招领</view>
+</cu-custom>
+
+<view class="tabsBox " >
+<view class="column fixed " id="navbar" style="top:{{CustomBar}}px;">
+        <view class="tabs">
+            <view bindtap="tabSelect" data-id="0" class="{{TabCur==0 ? 'nav-switch-style':''}} tabsItem">
+                <text style="position: relative;top: 9px;">遗失的</text>
+                <view class="textLine" wx:if="{{TabCur==0}}"></view>
+            </view>
+
+            <view bindtap="tabSelect" data-id="1" class="{{TabCur==1 ? 'nav-switch-style':'' }} tabsItem">
+                <text style="position: relative;top: 9px;">被捡到</text>
+                <view class="textLine" wx:if="{{TabCur==1}}"></view>
+            </view>
+            <view bindtap="tabSelect" data-id="2" class="{{TabCur==2 ? 'nav-switch-style':'' }} tabsItem">
+                <text style="position: relative;top: 9px;">我的</text>
+                <view class="textLine" wx:if="{{TabCur==2}}"></view>
+            </view>
+
+        </view>
+
+        <view class="cu-bar search bg-white">
+            <view class="search-form round">
+                <text class="cuIcon-search"></text>
+                <input type="text" placeholder="搜索" confirm-type="search" bindconfirm="search" bindinput='getInputValue'></input>
+            </view>
+        </view>
+</view>
+    <view class="padding-sm flex flex-wrap" style="margin:0 auto;margin-top: 40px;">
+  <view class="padding-xs" wx:for="{{ColorList}}" wx:key bindtap="sort" data-title="{{item.title}}" data-index="{{index}}" wx:if="{{TabCur != 2}}">
+    <view class="cu-tag  {{item.name}}">{{item.title}}</view>
+  </view>
+</view>
+</view>
+
+<view>
+<!--遗失的-->
+  <view class="item" wx:for="{{lostData}}" wx:if="{{TabCur==0}}"> 
+    <view class="itemLeft">
+      <view class="itemPic">
+        <image mode="aspectFill" src="{{item.imgList[0]}}" data-src="{{item.imgList}}" bindtap="previewImage" wx:if="{{item.imgList.length}}"></image>
+        <image mode="aspectFill" src="../../images/noHavePic.png" data-src="../../images/noHavePic.png" bindtap="previewImage" wx:if="{{!item.imgList.length}}"></image>
+      </view>
+      <view class="tag">
+        <view class="{{!item.finish ? 'bg-gradual-orange' :'bg-grey'}} padding radius text-center shadow-blur">
+          <view class="text-lg">{{!item.finish ? '寻物中' : '已找到'}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="itemRight">
+      <view class="connent" bindtap="inDetail" data-id="{{item._id}}" data-item="{{item}}" data-openid="{{item._openid}}">
+        <view class="title">{{item.thingName}}</view>
+        <view class="describe">{{item.detailInfo}}</view>
+      </view>
+      <view class="footer">
+        <view class="share">
+          <button class="cu-btn icon" open-type="share" data-id="{{item._id}}" data-src="{{item.imgList[0]}}">
+            <text class="cuIcon-share "></text>
+          </button>
+        </view>
+        <view class="time">
+          <text class="timeType">{{tools.timeChn(item.time)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<!--被捡到-->
+  <view class="item" wx:for="{{findData}}" wx:if="{{TabCur==1}}"> 
+    <view class="itemLeft">
+      <view class="itemPic">
+        <image mode="aspectFill" src="{{item.imgList[0]}}" data-src="{{item.imgList}}" bindtap="previewImage" wx:if="{{item.imgList.length}}"></image>
+        <image mode="aspectFill" src="../../images/noHavePic.png" data-src="../../images/noHavePic.png" bindtap="previewImage" wx:if="{{!item.imgList.length}}"></image>
+      </view>
+      <view class="tag">
+        <view class="{{!item.finish ? 'bg-gradual-green' : 'bg-grey'}} padding radius text-center shadow-blur">
+          <view class="text-lg">{{!item.finish ? '寻主中' : '已找到'}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="itemRight">
+      <view class="connent" bindtap="inDetail" data-id="{{item._id}}" data-item="{{item}}" data-openid="{{item._openid}}">
+        <view class="title">{{item.thingName}}</view>
+        <view class="describe">{{item.detailInfo}}</view>
+      </view>
+      <view class="footer">
+        <view class="share">
+          <button class="cu-btn icon" open-type="share" data-id="{{item._id}}" data-src="{{item.imgList[0]}}">
+            <text class="cuIcon-share "></text>
+          </button>
+        </view>
+        <view class="time">
+          <text class="timeType">{{tools.timeChn(item.time)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<!--我的-->
+<view class="item" wx:for="{{mineData}}" wx:if="{{TabCur==2}}"> 
+    <view class="itemLeft">
+      <view class="itemPic">
+        <image mode="aspectFill" src="{{item.imgList[0]}}" data-src="{{item.imgList}}" bindtap="previewImage" wx:if="{{item.imgList.length}}"></image>
+        <image mode="aspectFill" src="../../images/noHavePic.png" data-src="../../images/noHavePic.png" bindtap="previewImage" wx:if="{{!item.imgList.length}}"></image>
+      </view>
+      <view class="tag">
+        <view class="{{!item.finish ? 'bg-gradual-purple' :'bg-grey' }} padding radius text-center shadow-blur">
+          <view class="text-lg">{{!item.finish ? '未完成' : '已完成'}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="itemRight">
+      <view class="connent" bindtap="inDetail" data-id="{{item._id}}" data-item="{{item}}" data-openid="{{item._openid}}">
+        <view class="title">{{item.thingName}}</view>
+        <view class="describe">{{item.detailInfo}}</view>
+      </view>
+      <view class="footer">
+        <view class="share">
+          <button class="cu-btn icon" open-type="share" data-id="{{item._id}}" data-src="{{item.imgList[0]}}">
+            <text class="cuIcon-share "></text>
+          </button>
+        </view>
+        <view class="time">
+          <text class="timeType">{{tools.timeChn(item.time)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view wx:if="{{mineData.length == 0}}">
+    <image style="margin:0 auto; top: 30px;left: 20px;" src="../../images/empty.png"></image>
+  </view> -->
+</view>
+<view wx:if="{{cardNum}}">
+    <view class="toTop text-center {{cardNum == true ?'animationLaunchStar':'animationLaunchEnd'}}" bindtap="toTop">
+        <view class="animationTop">
+            <image src="{{launchImg}}" style="position:ralative; width: 45px;height: 45px;"></image>
+            <view style="font-size:10px;position:relative;top:-5px" wx:if="{{launchImg != ''}}"> 回到顶部</view>
+        </view>
+    </view>
+</view>
+
+<view class="putTag {{putTag == true ?'animationLaunchStar':'animationLaunchEnd'}}" bindtap="inPut" wx:if="{{putTag}}">
+    <image src="{{putImg}}"></image>
+</view>

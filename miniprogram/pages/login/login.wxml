@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<!--第一个登陆页面-->
+<view class="loginPage ">
+  <!--自定义导航栏-->
+  <cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">佛趣广场</view>
+</cu-custom>
+
+ <view style="background-color:#f8f8ff; height:100vh; padding-top:100rpx;">
+  <view class="container card bg-white margin-top ab animationEn">
+    <view class="cu-avatar radius margin-left xl avator animationEnBtn" style="background-image:url(https://666f-fosusquare-9gwq61i6a0c9d216-1305659720.tcb.qcloud.la/system/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210509164840.png?sign=f4cb9f4cb95f89561a6182640e8c471c&t=1627912034);"></view>
+
+    <view class="connentInfo">
+      <view style="font-size: 17px;margin-bottom: 10px;">.申请获取以下权限</view>
+            <text class="text-grey">.获得你的公开信息(昵称，头像，性别)</text>
+    </view>
+    <view class="userinfo1">
+      <button bindtap="getUserProfile" class="cu-btn block bg-blue light lg animationEnBtn">
+        <text class="cuIcon-weixin"></text> 授权登陆</button>
+        <button bindtap="backToIndex" class="cu-btn block bg-orange light lg animationEnBtn">
+         看看再决定</button>
+    </view>
+  </view>
+  <view class="footer animationEn">
+  © 创梦未来 2020-2021
+</view>
+</view>
+</view>

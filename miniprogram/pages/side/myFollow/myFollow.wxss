@@ -1,0 +1,37 @@
+/* pages/side/myFollow/myFollow.wxss */
+.btn1 {
+  position: fixed;
+  font-size: 25rpx;
+  color: aliceblue;
+  background-color: rgb(211, 197, 197);
+  margin-top: 25rpx;
+  justify-content: center;
+  text-align: center;
+  margin-right: 20rpx;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+  border-radius: 10rpx;
+  width: fit-content;
+  height: fit-content;
+}
+.avatarPic{
+  border: 10rpx solid #F8F8FF;
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 30rpx;
+}
+.cu-tag {
+  font-size: 18rpx;
+  vertical-align: middle;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0rpx 17rpx;
+  height: 46rpx;
+  margin-right: 10px;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  white-space: nowrap;
+}

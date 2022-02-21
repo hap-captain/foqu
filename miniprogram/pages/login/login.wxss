@@ -1,0 +1,88 @@
+/* pages/login/login.wxss */
+.loginPage
+{
+  position: absolute;
+  background-color: white;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+.card{
+  border-radius: 30rpx;
+  box-shadow: 1px 1px 2px 0px #A9A9A9;
+}
+.nextBtn{
+  position: relative;
+
+}
+.textType {
+  position: relative;
+  float: right;
+}
+.iconText {
+  position: relative;
+  left: 25rpx;
+}
+.cu-btn.block {
+  display: flex;
+  position: relative;
+  margin-bottom: 29px;
+}
+.cu-list.menu>.cu-item .content1 {
+	font-size: 30rpx;
+	line-height: 4.6em;
+	flex: 1
+}
+.userinfo1, .uploader, .tunnel {
+  margin-top: 81rpx;
+  /* height: 140rpx; */
+  /* width: 100%; */
+  /* border-left: none; */
+  /* border-right: none; */
+  /* display: flex; */
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+.avator{
+  position: relative;
+  top: 46px;
+}
+.connentInfo{
+  position: relative;
+    margin-top: 105px;
+    width: 70%;
+    height: 94px;
+ 
+}
+.cu-avatar.xl {
+  width: 180rpx;
+  height: 180rpx;
+  font-size: 2.5em;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0rpx 10rpx 10rpx 70rpx;
+  align-items: center;
+  box-sizing: border-box;
+} 
+.footer {
+  position: fixed;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  font-size: 30rpx;
+}
+.animationEn{
+  animation: fadeInRight 1s 1;
+}
+.animationEnBtn{
+  animation:  zoomIn 2s 1;
+}

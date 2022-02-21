@@ -1,0 +1,90 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">探索更多</view>
+</cu-custom>
+
+
+<view class="cu-bar search bg-white ">
+    <view class="search-form round animationRight ">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索帖子,探索更多" confirm-type="search" bindinput="inputText"></input>
+    </view>
+
+    <view class="action">
+        <button class="cu-btn bg-cyan light shadow-blur round btnAnimation" size="mini" bindtap="search">搜索</button>
+    </view>
+</view>
+
+
+
+
+
+<!-- 搜索渲染 -->
+<view class="allPage">
+    <!--发现内容卡片-->
+    <block>
+        <view wx:for="{{connent}}" wx:for-index="index" wx:key class="animationEn">
+            <i-card wx:if="{{!item.dynamic.imgList.length}}" userName="{{item.dynamic.author.name}}"
+                time="{{tools.timeChn(item.dynamic.time)}}"
+                userInfo="{{item.dynamic.author.grade}} {{item.dynamic.author.place}}"
+                thumb="{{item.dynamic.author.avatarPic}}">
+
+                <view slot="header" class="header" catchtap="inPersonPage" data-openid="{{item._openid}}"></view>
+
+                <view slot="content" bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}"
+                    data-openid="{{item._openid}}" data-index="{{index}}" data-tabCur="{{TabCur}}">
+                    <text selectable="true">{{item.dynamic.inputData}}
+                    </text>
+                </view>
+
+                <view i-class="messageAndPraise" slot="footer">
+                    <view class="footer">
+                                <view bindtap="dianzan" data-id="{{item._id}}" data-index="{{index}}">
+                                    <i-icon type="{{item.love? 'praise_fill':'praise'}}" />
+                                    <text class="praiseType">{{item.dynamic.praise}}</text>
+                                </view>
+                                <view bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}">
+                                    <i-icon type="message" />
+                                    <text class="praiseType">{{item.commentNum}}</text>
+                                </view>
+                            </view>
+                </view>
+            </i-card>
+
+
+            <i-card wx:if="{{item.dynamic.imgList.length}}" userName="{{item.dynamic.author.name}}"
+                time="{{tools.timeChn(item.dynamic.time)}}"
+                userInfo="{{item.dynamic.author.grade}} {{item.dynamic.author.place}}"
+                thumb="{{item.dynamic.author.avatarPic}}" wx:for-index="index0">
+                <view slot="header" class="header" bindtap="inPersonPage" data-openid="{{item._openid}}"></view>
+                <view slot="content" bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}"
+                    data-openid="{{item._openid}}" data-index="{{index}}" data-tabCur="{{TabCur}}">
+                    <view class="havePic">
+                        <text selectable="true">{{item.dynamic.inputData}}
+                        </text>
+                    </view>
+
+                    <view>
+                        <image mode="aspectFill" src='{{item.dynamic.imgList[0]}}' class="pic"></image>
+                    </view>
+                </view>
+                <view i-class="messageAndPraise" slot="footer">
+                    <view class="footer">
+                                <view bindtap="dianzan" data-id="{{item._id}}" data-index="{{index}}">
+                                    <i-icon type="{{item.love? 'praise_fill':'praise'}}" />
+                                    <text class="praiseType">{{item.dynamic.praise}}</text>
+                                </view>
+                                <view bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}">
+                                    <i-icon type="message" />
+                                    <text class="praiseType">{{item.commentNum}}</text>
+                                </view>
+                            </view>
+                </view>
+            </i-card>
+        </view>
+    </block>
+
+    <view class="nameFooter animationEnImg">
+        © 创梦未来 2020-2021
+    </view>
+</view>
