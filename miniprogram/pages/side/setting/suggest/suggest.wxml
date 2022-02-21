@@ -1,0 +1,33 @@
+<!--miniprogram/pages/mine/suggest/suggest.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">建议与反馈</view>
+</cu-custom>
+
+<view style="background-color:#f8f8ff">
+
+<view class='margin-xl bg-white padding-xl card animationEn'>
+  <!-- <view class='text-center margin-bottom text-lg  text-grey'>关于创梦未来团队</view> -->
+  <view class='text-content'>
+    <view>如果您有什么好的建议或者发现佛趣广场有不完善的地方，可以加管理者 小U 的微信，感谢您的建议与反馈！</view>
+    <view class='text-center'>
+      <view class='margin-top-sm'>小U微信号</view>
+      <image class="animationEnCard" style="position:relative;width:212px;height:212px" src="{{xiaoU}}"
+        bindtap="previewImage" data-src="{{xiaoU}}"></image>
+    </view>
+    <view class='margin-top-sm'>如果你想要更加了解我们，加入我们，请关注我们的公众号和视频号。</view>
+    <view class='text-center'>
+      <view class='margin-top-sm'>公众号</view>
+      <image class="animationEnCard" style="position:relative;width:220px;height:220px" src="{{gonzonhao}}"
+        bindtap="previewImage" data-src="{{xiaoU}}"></image>
+      <view class='margin-top-sm'>视频号</view>
+      <image class="animationEnCard" style="position:relative;width:212px;height:212px" src="{{shipinhao}}"
+        bindtap="previewImage" data-src="{{xiaoU}}"></image>
+    </view>
+  </view>
+  
+</view>
+<view class="footer animationEn">
+    © 创梦未来 2020-2021
+  </view>
+</view>

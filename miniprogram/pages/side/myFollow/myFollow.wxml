@@ -1,0 +1,29 @@
+<!--自定义导航栏-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的关注</view>
+</cu-custom>
+
+
+<view class="cu-list menu-avatar" > 
+  <block wx:for="{{followList}}" wx:for-index="index" wx:key="index">
+    <view class="cu-item">
+      <view class="cu-avatar round lg" style="background-image:url({{item.avatarPic}});" data-openid="{{item.openid}}" bindtap="inPersonPage" ></view>
+      <view class="content">
+        <view class="text-grey" data-openid="{{item.openid}}" bindtap="inPersonPage">{{item.name}} </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">
+              <text class="margin-right-xs"></text>{{item.signature}}
+          </text>
+        </view>
+      </view>
+      <view class="cu-tag line-red radius" data-openid="{{item.openid}}" bindtap="cancelFollow">已关注</view>
+    </view>
+  </block>
+</view>
+
+<block wx:if="{{havePic}}">
+<image style="position:relative;top:{{CustomBar+50}}px; margin:0 auto;" src="https://666f-fosusquare-9gwq61i6a0c9d216-1305659720.tcb.qcloud.la/system/%E7%A9%BA%E7%8A%B6%E6%80%81.png?sign=aefb2412df32920800fc04cfad75db15&t=1627215674">
+</image>
+</block>
+

@@ -1,0 +1,61 @@
+.pageContainer{
+  width: 100%;
+  min-height: 100vh;
+  background-color:white;
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx;
+  font-size: 30rpx;
+  background-color: white;
+}
+.nav-switch-style{
+  color: #ff9700;
+}
+.cu-card.article>.cu-item {
+  padding-bottom: 30rpx;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.cu-card.article>.cu-item .content>image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 10px;
+  margin-right: 13px;
+  border-radius: 6rpx;
+}
+.cu-card.article>.cu-item .content {
+  display: flex;
+  padding: 0 20rpx;
+}
+.cu-card.article>.cu-item {
+  padding-bottom: 20rpx;
+}
+.connent{
+  position: relative;
+  width: 80%;
+  height: 70;
+  background-color: yellow;
+}
+.title1
+{
+  margin-top: 10px;
+  color: black;
+  font-size: 29rpx;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.title2
+{
+  color: grey;
+  font-size: 13px;
+  line-height: 18px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

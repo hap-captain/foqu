@@ -1,0 +1,330 @@
+/* 
+此文件为开发者工具生成，生成时间: 2021/11/6 上午11:24:40
+使用方法：
+在 main.wxss 文件末尾引入样式
+```
+@import "./main-wxa-auto-dark.wxss";
+```
+ */
+
+@media (prefers-color-scheme: dark) {
+    page {
+        --red: rgb(212, 61, 54);
+        --orange: rgb(165, 57, 0);
+        --yellow: rgb(90, 48, 0);
+        --olive: rgb(23, 85, 0);
+        --green: rgb(0, 112, 0);
+        --cyan: rgb(0, 102, 98);
+        --blue: rgb(0, 122, 247);
+        --purple: rgb(199, 143, 255);
+        --mauve: rgb(227, 109, 245);
+        --pink: rgb(219, 51, 146);
+        --brown: rgb(179, 116, 75);
+        --grey: rgb(87, 104, 114);
+        --black: rgb(209, 209, 209);
+        --darkGray: rgb(149, 149, 149);
+        --gray: rgb(83, 83, 83);
+        --ghostWhite: rgb(27, 27, 27);
+        --white: rgb(17, 17, 17);
+        --redLight: rgb(54, 32, 31);
+        --orangeLight: rgb(43, 29, 13);
+        --yellowLight: rgb(33, 25, 0);
+        --oliveLight: rgb(22, 31, 8);
+        --greenLight: rgb(17, 37, 22);
+        --cyanLight: rgb(9, 36, 36);
+        --blueLight: rgb(14, 41, 59);
+        --purpleLight: rgb(47, 40, 59);
+        --mauveLight: rgb(54, 37, 58);
+        --pinkLight: rgb(56, 31, 46);
+        --brownLight: rgb(44, 35, 29);
+        --greyLight: rgb(30, 32, 34);
+        --gradualRed: rgb(0, 0, 0);
+        --gradualOrange: rgb(0, 0, 0);
+        --gradualGreen: rgb(0, 0, 0);
+        --gradualPurple: rgb(0, 0, 0);
+        --gradualPink: rgb(0, 0, 0);
+        --gradualBlue: rgb(0, 0, 0);
+        --redShadow: rgba(223, 86, 73, 0.2);
+        --orangeShadow: rgba(180, 78, 0, 0.2);
+        --yellowShadow: rgba(106, 67, 0, 0.2);
+        --oliveShadow: rgba(55, 105, 0, 0.2);
+        --greenShadow: rgba(7, 133, 41, 0.2);
+        --cyanShadow: rgba(0, 102, 98, 0.2);
+        --blueShadow: rgba(92, 150, 255, 0.2);
+        --purpleShadow: rgba(212, 161, 255, 0.2);
+        --mauveShadow: rgba(237, 134, 252, 0.2);
+        --pinkShadow: rgba(229, 81, 160, 0.2);
+        --brownShadow: rgba(194, 137, 99, 0.2);
+        --greyShadow: rgba(110, 126, 134, 0.2);
+        --grayShadow: rgba(110, 126, 134, 0.2);
+        --blackShadow: rgba(243, 243, 243, 0.2);
+    }
+
+    image.loading::before {
+        background-color: rgb(24, 24, 24);
+    }
+
+    image.loading::after {
+        color: rgb(55, 55, 55);
+    }
+
+    radio.radio[checked]::after {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    switch.gray[checked] .wx-switch-input,
+    checkbox.gray[checked] .wx-checkbox-input,
+    radio.gray[checked] .wx-radio-input {
+        background-color: rgb(28, 28, 28) !important;
+    }
+
+    .solid::after, .solid-top::after, .solid-right::after, .solid-bottom::after,
+    .solid-left::after, .solids::after, .solids-top::after, .solids-right::after,
+    .solids-bottom::after, .solids-left::after, .dashed::after,
+    .dashed-top::after, .dashed-right::after, .dashed-bottom::after,
+    .dashed-left::after {
+        border-radius: rgb(0, 0, 0);
+    }
+
+    .solids::after {
+        border: rgb(0, 0, 0);
+    }
+
+    .solids-top::after {
+        border-top: rgb(0, 0, 0);
+    }
+
+    .solids-right::after {
+        border-right: rgb(0, 0, 0);
+    }
+
+    .solids-bottom::after {
+        border-bottom: rgb(0, 0, 0);
+    }
+
+    .solids-left::after {
+        border-left: rgb(0, 0, 0);
+    }
+
+    .dashed::after {
+        border: rgb(0, 0, 0);
+    }
+
+    .dashed-top::after {
+        border-top: rgb(0, 0, 0);
+    }
+
+    .dashed-right::after {
+        border-right: rgb(0, 0, 0);
+    }
+
+    .dashed-bottom::after {
+        border-bottom: rgb(0, 0, 0);
+    }
+
+    .dashed-left::after {
+        border-left: rgb(0, 0, 0);
+    }
+
+    .shadow-blur::before {
+        background: rgb(0, 0, 0);
+        border-radius: rgb(0, 0, 0);
+    }
+
+    .cu-btn:not([class*="bg-"]) {
+        background-color: rgb(28, 28, 28);
+    }
+
+    .cu-btn[class*="line"] {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .cu-tag[class*="line-"]::after {
+        border-radius: rgb(0, 0, 0);
+    }
+
+    .cu-tag.badge:not([class*="bg-"]) {
+        background-color: rgb(209, 70, 67);
+    }
+
+    .cu-avatar {
+        background-color: rgb(55, 55, 55);
+    }
+
+    .cu-progress {
+        background-color: rgb(27, 30, 35);
+    }
+
+    @keyframes progress-stripes {
+        from {
+            background-position: 72rpx 0;
+        }
+
+        to {
+            background-position: 0 0;
+        }
+    }
+
+    .load-progress .load-progress-spinner::after {
+        border-top-color: rgb(0, 0, 0);
+        border-left-color: rgb(0, 0, 0);
+    }
+
+    @keyframes load-progress-spinner {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    .cu-list.menu>.cu-item:after {
+        border-bottom: rgb(0, 0, 0);
+        border-radius: rgb(0, 0, 0);
+    }
+
+    .cu-list.menu>.cu-item.grayscale {
+        background-color: rgb(24, 24, 24);
+    }
+
+    .cu-list.menu>.cu-item.cur {
+        background-color: rgb(26, 23, 10);
+    }
+
+    .cu-list.menu>.cu-item button.content {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .cu-list.grid>.cu-item:after {
+        border-radius: rgb(0, 0, 0);
+    }
+
+    .cu-list.grid>.cu-item text {
+        color: rgb(115, 115, 115);
+    }
+
+    .cu-bar .search-form {
+        background-color: rgb(24, 24, 24);
+    }
+
+    .cu-bar .search-form input {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .cu-bar.tabbar .action.add-action {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .cu-bar.tabbar .action.add-action::after {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .cu-bar.tabbar .action.add-action::before {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .cu-custom .cu-bar .border-custom {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .cu-custom .cu-bar .border-custom::after {
+        border-radius: rgb(0, 0, 0);
+    }
+
+    .cu-timeline .cu-time {
+        color: rgb(115, 115, 115);
+    }
+
+    .cu-timeline>.cu-item:not([class*="text-"]) {
+        color: rgb(55, 55, 55);
+    }
+
+    .cu-timeline>.cu-item::after {
+        background-color: rgb(42, 42, 42);
+    }
+
+    .cu-chat .cu-item>.main .content::after {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .cu-chat .cu-item>.main .content::before {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .cu-chat .cu-info {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cu-card.case .image .cu-bar {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .cu-card.article>.cu-item .content .text-content {
+        color: rgb(115, 115, 115);
+    }
+
+    .cu-form-group+.cu-form-group {
+        border-top: rgb(0, 0, 0);
+    }
+
+    .cu-form-group input {
+        color: rgb(168, 168, 168);
+    }
+
+    .cu-form-group textarea[disabled],
+    .cu-form-group textarea[disabled] .placeholder {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    .cu-modal {
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    .cu-dialog {
+        background-color: rgb(22, 22, 22);
+    }
+
+    swiper .a-swiper-dot {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .cu-steps .cu-item::before, .cu-steps .cu-item::after,
+    .cu-steps.steps-arrow .cu-item::before,
+    .cu-steps.steps-arrow .cu-item::after {
+        border-bottom: rgb(0, 0, 0);
+    }
+
+    .cu-steps.steps-arrow .cu-item::before,
+    .cu-steps.steps-arrow .cu-item::after {
+        color: rgb(55, 55, 55);
+    }
+
+    .cu-steps .cu-item[class*="text-"]::after {
+        color: rgb(0, 0, 0);
+    }
+
+    .cu-steps .cu-item[class*="text-"] .num {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .grid.grid-square .cu-tag {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .bg-gray {
+        background-color: rgb(28, 28, 28);
+    }
+
+    .bg-gradual-blue {
+        background-color: rgb(0, 42, 57);
+    }
+
+    .bg-mask::after {
+        border-radius: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}

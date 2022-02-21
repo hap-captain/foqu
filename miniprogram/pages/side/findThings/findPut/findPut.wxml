@@ -1,0 +1,109 @@
+<!--miniprogram/pages/put/put.wxml-->
+<!--自定义导航栏-->
+
+<view class="bg">
+<view class="NS">
+	<cu-custom bgColor="" isBack="{{true}}">
+		<view slot="backText">返回</view>
+		<view slot="content">发布</view>
+	</cu-custom>
+</view>
+
+<view class=" container ">
+	<view class="allPage" style="top:{{CustomBar}}px;">
+		<!--表单-->
+		<form bindsubmit="formSubmit" id='2' bindreset="formReset">
+			<view class="textView">
+			<view class="cu-form-group margin-top">
+		<view class="">
+		<text class="cuIcon-goodsfill text-red iconAndText1 "></text>类型选择
+		</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'请选择事件类型'}}
+			</view>
+		</picker>
+	</view>
+	</view>
+
+		<!-- 物品名称 -->
+			<view class="textView">
+			<view class="cu-bar  title  ">
+				<text class="cuIcon-goodsfill text-red iconAndText ">
+					<text style="color:black;font-size:16px" class="margin-left-sm">物品名称</text>
+					</text>
+			</view>
+			<view class="cu-form-group  connent ">
+				<input type="text" maxlength="-1" placeholder="输入物品名称" name="thingName"/>
+			</view>
+		</view>
+		<!-- 描述 -->
+		<view class="textView">
+			<view class="cu-bar  title  ">
+				<text class="cuIcon-writefill text-orange iconAndText ">
+					<text style="color:black;font-size:16px"	class="margin-left-sm">描述</text>
+				</text>
+			</view>
+			<view class="cu-form-group  connent ">
+				<textarea maxlength="-1" disabled="{{modalName!=null}}" placeholder="输入时间、地点等等信息" fixed="true" name="detailInfo"></textarea>
+			</view>
+		</view>
+		<!-- 联系方式 -->
+		<view class="textView">
+			<view class="cu-bar title  ">
+				<text class="cuIcon-peoplefill text-olive iconAndText ">
+					<text style="color:black;font-size:16px"	class="margin-left-sm">联系方式</text>
+				</text>
+			</view>
+			<view class="cu-form-group connent ">
+				<input type="text" maxlength="-1" placeholder="输入您的联系方式" name="linkInfo"/>
+			</view>
+		</view>
+		<!-- 图片 -->
+		<view class="imgView" >
+			<view class="cu-bar  margin-top title  ">
+				<text class="cuIcon-picfill text-green iconAndText margin-right-20rpx"><text style="color:black;font-size:16px"
+						class="margin-left-sm">图片</text></text>
+				<view class="action">
+					{{imgList.length}}/9
+				</view>
+			</view>
+			<view class="cu-form-group  photo   connent">
+				<view class="grid col-4 grid-square flex-sub">
+					<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage"
+						data-url="{{imgList[index]}}">
+						<image src='{{imgList[index]}}' mode='aspectFill' class="round"></image>
+						<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+							<text class="cuIcon-close"></text>
+						</view>
+					</view>
+					<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+						<text class="cuIcon-cameraadd"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 标签 -->
+		<view class="tagView">
+			<view class="cu-bar  title  ">
+				<text class="cuIcon-tagfill text-blue iconAndText "><text style="color:black;font-size:16px"
+						class="margin-left-sm">标签</text></text>
+			</view>
+			<view class="padding-sm flex flex-wrap" style="margin:0 auto;background-color: #ffffff45;backdrop-filter: blur(6px);">
+				<view class="padding-xs animation-scale-up" wx:for="{{ColorList}}" wx:key bindtap="sort" data-title="{{item.title}}" data-index="{{index}}">
+					<view class="cu-tag  {{item.name}}">{{item.title}}</view>
+				</view>
+			</view>
+		</view>
+
+		<block >
+				<view class="putBtn padding-xl animationBtnEn ">
+					<button class="cu-btn block lg shadow round bg-blue light" formType="submit">
+						<text class="cuIcon-upload "></text>发布</button>
+				</view>
+			</block>
+
+		</form>
+		</view>
+	</view>
+</view>

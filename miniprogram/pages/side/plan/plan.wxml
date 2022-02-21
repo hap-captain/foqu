@@ -1,0 +1,22 @@
+<!--pages/plan/plan.wxml-->
+<!--自定义导航栏-->
+<view class="">
+  <cu-custom bgColor="bg-white" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">校历作息</view>
+  </cu-custom>
+</view>
+
+<view style="background-color:#F8F8FF;">
+
+<view class="allpage animationEnImg">
+  <image style=" width: 95%;height:702px;" mode="scaleToFill" src="{{schoolPlan}}" bindtap="previewImage"
+    data-src="{{schoolPlan}}"></image>
+  <image style=" width: 95%;height:444px;" mode="scaleToFill" src="{{time}}" bindtap="previewImage"
+    data-src="{{time}}"></image>
+</view>
+
+<view class="footer animationEnImg">
+  © 创梦未来 2020-2021
+</view>
+</view>

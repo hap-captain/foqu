@@ -1,0 +1,43 @@
+/* miniprogram/pages/mine/message/messagePage/messagePage.wxss */
+
+.container {
+  height: 100vh;
+  background-color: #F8F8FF;
+}
+
+.container1 {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: auto;
+  margin: 22px auto;
+  box-sizing: border-box;
+}
+
+.card {
+  box-shadow: 1px 1px 2px 0px #A9A9A9;
+  border-radius: 25rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 60rpx;
+}
+
+.contentType {
+  line-height: 36px;
+}
+
+.footer {
+
+  position: fixed;
+  text-align: center;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  font-size: 30rpx;
+}
+
+.animation{
+  animation: zoomIn 2s 1;
+}

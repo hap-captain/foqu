@@ -1,0 +1,31 @@
+<!--miniprogram/pages/side/club/club.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">佛趣指南</view>
+</cu-custom>
+
+<view class="cu-bar bg-white solid-bottom ">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>佛趣小程序功能使用指南
+    </view>
+</view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow" bindtap="inEssay" data-link="{{item.url}}" wx:for="{{list}}">
+      <view class="content" >
+        <text class="text-black">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+<!-- <view class="nav-list">
+  <view class="list shadow-warp bg-white" wx:for="{{essay}}" wx:for-index="index" bindtap="inEssay"
+    data-url="{{item.url}}">
+    <view class="imgType">
+      <image mode="aspectFill" src="{{item.src}}"></image>
+    </view>
+    <view>
+      <text class="titleType">{{item.title}}</text>
+      <view class="titleType1">{{item.subtitle}}</view>
+    </view>
+  </view>
+</view> -->

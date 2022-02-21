@@ -1,0 +1,21 @@
+<!--miniprogram/pages/side/map/map.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">校园地图</view>
+</cu-custom>
+
+<view class="cu-list menu " wx:for="{{picList}}" wx:for-index="index" >
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-locationfill text-red"></text>
+        <text class="text-black">{{item.place}}</text>
+      </view>
+    </view>
+    <view>
+    <image style="width: {{item.imagewidth}}px; height: {{item.imageheight}}px;" src="{{item.src}}" bindload="imageLoad" data-index="{{index}}" data-src="{{item.src}}" bindtap="previewImage"></image>
+    </view>
+</view>
+
+<view class="footer animationEnImg">
+  校园Q版地图来自佛大易班，侵权立删。
+</view>

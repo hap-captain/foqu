@@ -1,0 +1,120 @@
+<!--miniprogram/pages/setting/setting.wxml-->
+
+<!--自定义导航栏-->
+<view class="animationEn">
+
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">个人信息</view>
+</cu-custom>
+</view>
+
+
+
+<view class="allPage animationEnList">
+<view class="cu-bar bg-white solid-bottom  ">
+  <view class="action">
+    <text class="cuIcon-title text-blue "></text>个人信息
+  </view>
+
+</view>
+<!--个人信息菜单-->
+<view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+  <view class="cu-item arrow" bindtap="changeAvatarPic">
+    <view class="content">
+      <text class="cuIcon-emojiflashfill text-pink"></text>
+      <text class="text-grey">头像</text>
+    </view>
+    <!-- style="background-image:url({{userinfo.avatarPic}});">-->
+    <view class="cu-avatar round sm">
+      <image src="{{userinfo.avatarPic}}" style="position:relative;width:30px;height:30px;border-radius:50%;">
+      </image>
+    </view>
+  </view>
+
+  <modal hidden="{{showModal}}" title="修改头像" confirm-text="确定" cancel-text="取消" bindcancel="cancel"
+    bindconfirm="confirm">
+    确定上传此图片为头像？
+  </modal>
+
+  <view class="cu-item  arrow" bindtap="setName">
+    <view class="content">
+      <text class="cuIcon-writefill text-grey" style="color:red"></text>
+      <text class="text-grey">昵称</text>
+      <text class="textType text-grey">{{userinfo.name}}</text>
+    </view>
+  </view>
+
+
+
+  <modal hidden="{{hiddenmodalput}}" title="修改昵称" confirm-text="修改" cancel-text="取消" bindcancel="cancelM"
+    bindconfirm="confirmM">
+    <input bindinput='iName' type='text' placeholder="请输入昵称..." auto-focus />
+  </modal>
+
+  <view class="cu-item  arrow">
+    <view class="content">
+      <picker bindchange="PickerChangeSex" value="{{indexSex}}" range="{{pickersex}}">
+        <text class="cuIcon-friendfill text-grey" style="color:orange;position:relative;left:10rpx;"></text>
+        <text class="text-grey" class="iconText text-grey">性别</text>
+        <text class="textType text-grey">{{userinfo.sex}}</text>
+      </picker>
+    </view>
+  </view>
+
+
+
+  <view class="cu-item  arrow">
+    <view class="content">
+      <picker bindchange="PickerChangePlace" value="{{indexPlace}}" range="{{pickerplace}}">
+        <text class="cuIcon-discoverfill text-grey" style="color:blue;position:relative;left:10rpx;"></text>
+        <text class="text-grey" class="iconText text-grey">校区</text>
+        <text class="textType text-grey">{{userinfo.place}}</text>
+      </picker>
+    </view>
+  </view>
+
+  <view class="cu-item  arrow" bindtap="setSignature">
+      <view class="content">
+        <text class="cuIcon-writefill text-grey" style="color:red"></text>
+        <text class="text-grey">个性签名</text>
+        <text class="textType text-grey">{{signature}}</text>
+      </view>
+    </view>
+
+</view>
+
+<modal hidden="{{hiddenmodalput1}}" title="设置个性签名({{signature.length}}/23)" confirm-text="完成" cancel-text="取消"  bindcancel="signatureM1" bindconfirm="signatureConfirmM1">
+      <input bindinput='iSignature' type='text' placeholder="请输入个性签名..." auto-focus />
+</modal>
+
+
+<!-- open-type='feedback' -->
+<view style="background-color:#F8F8FF" class="card">
+  <button class="cu-btn  lg" bindtap="inSuggest">
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-blue "></text>建议与反馈
+      </view>
+      <view class="action">
+      </view>
+    </view>
+  </button>
+
+</view>
+
+<button class="cu-btn  lg card" bindtap="inAboutUs">
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-blue "></text>关于我们
+    </view>
+    <view class="action">
+    </view>
+  </view>
+</button>
+
+
+</view>
+<view class="footer animationEn">
+© 创梦未来 2020-2021
+</view>

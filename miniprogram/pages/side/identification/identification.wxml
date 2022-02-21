@@ -1,0 +1,5 @@
+<!--pages/side/identification/identification.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">暂无内容</view>
+</cu-custom>

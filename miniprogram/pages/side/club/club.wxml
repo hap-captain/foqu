@@ -1,0 +1,44 @@
+<!--miniprogram/pages/side/club/club.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">社团</view>
+</cu-custom>
+
+<!-- 导航条 -->
+
+<view class="nav">
+  <view bindtap="navSwitch" data-index="0" class="{{navState==0 ? 'nav-switch-style':''}}">仙溪</view>
+  <view bindtap="navSwitch" data-index="1" class="{{navState==1 ? 'nav-switch-style':''}}">江湾</view>
+</view>
+
+<!-- 滑动页 -->
+<view >
+      <block wx:if="{{navState==0}}">
+        <view class="cu-card article  " wx:for="{{place1}}" wx:for-index="index" bindtap="inDetail" data-index="{{index}}" data-id="{{item._id}}">
+          <view class="cu-item">
+            <view class="content">
+              <image src="{{item.logo}}" mode="aspectFill"></image>
+              <view class="desc">
+                <view class="title1">{{item.name}}</view>
+                <view class="title2">{{item.title}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+     
+     <block wx:if="{{navState==1}}">   
+      <view class="cu-card article  " wx:for="{{place2}}" wx:for-index="index" bindtap="inDetail" data-index="{{index}}" data-id="{{item._id}}">
+          <view class="cu-item">
+            <view class="content">
+              <image src="{{item.logo}}" mode="aspectFill"></image>
+              <view class="desc">
+                <view class="title1">{{item.name}}</view>
+                <view class="title2"> {{item.title}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    
+</view>

@@ -1,0 +1,55 @@
+<!--index.wxml-->
+
+<!--自定义导航栏-->
+<view class="">
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">空课室查询({{myWeek}}周)</view>
+</cu-custom>
+</view>
+<view class="list ">
+  <view class="list-content " style="border-color: transparent;">
+    <view class="list-letf"><text class="cuIcon-discoverfill text-olive"></text> 地点</view>
+    <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}"
+      range="{{multiArray}}">
+      <view class="list-right">
+        <view class="list-right-text">{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}</view>
+        <view class='arrow'></view>
+      </view>
+
+    </picker>
+  </view>
+  <picker bindchange="selectDate" value="{{DateIndex}}" range="{{date}}" class="">
+    <view class="list-content">
+      <view class="list-letf"><text class="cuIcon-formfill text-orange"></text> 日期</view>
+      <view class="list-right">
+        <view class="list-right-text">{{myDate}}</view>
+        <view class='arrow'></view>
+      </view>
+    </view>
+  </picker>
+
+  <picker bindchange="selectTime" value="{{timeIndex}}" range="{{time}}" class="">
+    <view class="list-content" style="border-color: transparent;">
+      <view class="list-letf"><text class="cuIcon-timefill text-pink"></text> 时间段</view>
+      <view class="list-right">
+        <view class="list-right-text">{{myTime}}</view>
+        <view class='arrow'></view>
+      </view>
+    </view>
+  </picker>
+
+</view>
+<button class="cu-btn block  bg-blue light margin-tb-sm lg " bindtap="toggleDelay">
+  <text class="cuIcon-focus iconfont-spin"></text> 开始查询</button>
+
+<view class="padding-sm" wx:if="{{bitBtn}}">
+  <view class="flex flex-wrap justify-around animationBtn2">
+    <button class="bg-green light cu-btn {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow"
+      style="animation-delay: {{(index+1)*0.1}}s;" wx:for="{{emptyClassroom}}" wx:key="index">{{item}}</button>
+  </view>
+</view>
+
+<view class="footer">
+  © 创梦未来 2020-2021
+</view>

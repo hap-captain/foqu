@@ -1,0 +1,73 @@
+<!--miniprogram/pages/put/put.wxml-->
+<!--自定义导航栏-->
+
+<view class="bg">
+<view class="NS">
+	<cu-custom bgColor="" isBack="{{true}}">
+		<view slot="backText">返回</view>
+		<view slot="content">发布</view>
+	</cu-custom>
+</view>
+
+<view class=" container ">
+	<view class="allPage" style="top:{{CustomBar}}px;margin-top:20rpx;">
+		<!--表单-->
+		<form bindsubmit="formSubmit" id='2' bindreset="formReset">
+		<view class="textView">
+			<view class="cu-bar  title  ">
+				<text class="cuIcon-writefill text-green iconAndText "><text style="color:black;font-size:16px"
+						class="margin-left-sm">文字</text></text>
+			</view>
+			<view class="cu-form-group  connent ">
+				<textarea maxlength="-1" disabled="{{modalName!=null}}" value="{{searchinput}}" bindinput="textareaAInput" placeholder="  说点什么呗" fixed="true"></textarea>
+			</view>
+		</view>
+
+
+		<view class="imgView" >
+			<view class="cu-bar margin-top title  ">
+				<text class="cuIcon-picfill text-orange iconAndText margin-right-20rpx"><text style="color:black;font-size:16px"
+						class="margin-left-sm">图片</text></text>
+				<view class="action">
+					{{dynamic.imgList.length}}/9
+				</view>
+			</view>
+			<view class="cu-form-group  photo   connent">
+				<view class="grid col-4 grid-square flex-sub">
+					<view class="bg-img" wx:for="{{dynamic.imgList}}" wx:key="{{index}}" bindtap="ViewImage"
+						data-url="{{dynamic.imgList[index]}}">
+						<image src='{{dynamic.imgList[index]}}' mode='aspectFill' class="round"></image>
+						<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+							<text class="cuIcon-close"></text>
+						</view>
+					</view>
+					<view class="solids" bindtap="ChooseImage" wx:if="{{dynamic.imgList.length<9}}">
+						<text class="cuIcon-cameraadd"></text>
+					</view>
+				</view>
+			</view>
+</view>
+
+<view class="tagView">
+			<view class="cu-bar title  ">
+				<text class="cuIcon-tagfill text-red iconAndText "><text style="color:black;font-size:16px"
+						class="margin-left-sm">标签</text></text>
+			</view>
+			<view class="padding-sm flex flex-wrap" style="margin:0 auto;  background-color: #ffffff45;backdrop-filter: blur(6px);">
+				<view class="padding-xs animation-scale-up" wx:for="{{ColorList}}" wx:key bindtap="sort" data-title="{{item.title}}" data-index="{{index}}">
+					<view class="cu-tag  {{item.name}}">{{item.title}}</view>
+				</view>
+			</view>
+		</view>
+
+
+		</form>
+			<block wx:if="{{dynamic.imgList.length>0 || dynamic.inputData!=0}}">
+				<view class="putBtn padding-xl animationBtnEn ">
+					<button class="cu-btn block lg shadow round bg-blue light" bindtap="formSubmit">
+						<text class="cuIcon-upload "></text>发布</button>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

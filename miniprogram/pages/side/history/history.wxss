@@ -1,0 +1,162 @@
+/* miniprogram/pages/personPage/personPage.wxss */
+page{
+  background-color: #f6f6f6;
+}
+.userInfo{
+  position: fixed;
+  height: 319rpx;
+  width: 100%;
+  /* left: 0px; */
+  top: 167px;
+  transform: translate(0%,-50%);
+  z-index: 0;
+}
+.signature{
+  position: relative;
+    width: 45%;
+    top: 40%;
+    margin: 4px 0px;
+    transform: translate(100%,-50%);
+}
+.signatureText{
+  position: relative;
+  width: 200px;
+  height: auto;
+}
+.userimage {
+  position: absolute;
+    width: 150rpx;
+    height: 150rpx;
+    border: 6rpx solid white;
+    border-radius: 50%;
+    left: 32%;
+    top: 58%;
+    transform: translate(-50%,-50%);
+}
+.bgPic{
+  position: fixed;
+  width: 100%;
+  height: 233px;
+  background-color: white;
+  z-index: 0;
+}
+.cu-list.menu-avatar {
+  /* overflow: hidden; */
+  height: auto;
+  position: relative;
+}
+.shadow-blur {
+  position: fixed;
+  width: 100%;
+  top: -62rpx;
+  height: 44%;
+}
+.bgWare
+{
+  position: fixed;
+  width: 100%;
+  height: 460rpx;
+  top: 0rpx;
+}
+.response {
+  width: 100%;
+  height: 460rpx;
+}
+.shadow-blur {
+  /* FONT-WEIGHT: 200; */
+  position: fixed;
+  width: 100%;
+  top: 233px;
+  z-index: 0;
+  height: 55px;
+}
+.waveColor{
+  background-color:#beebff ;
+}
+.historyCard{
+  position: fixed;
+  z-index: 3;
+}
+.dynamicCard{
+  width: 95%;
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  padding-bottom: 19px;
+  /* text-align: center; */
+  border-radius: 10px;
+}
+.timeType{
+  position: relative;
+  float: left;
+  padding: 8px 19rpx;
+  font-size: 13px;
+}
+.name{
+  position: relative;
+  font-size: 40rpx;
+  padding: 8px 0px;
+  font-weight: 599;
+  width: 45%;
+  top: 50%;
+  transform: translate(100%,-50%);
+}
+.card {
+  display: block;
+  border-radius: 20rpx;
+  background-color: var(--white);
+  overflow: hidden;
+  
+}
+.cu-card.dynamic>.cu-item>.text-content {
+  padding: 12px 19rpx 9px;
+  max-height: 6.4em;
+  overflow: hidden;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.text-right {
+  text-align: right;
+  padding-right: 19rpx;
+  padding-bottom: 52rpx;
+}
+.imageType{
+  position: relative;
+}
+.imageType image{
+  position: relative;
+    margin: 7rpx -31rpx 5rpx 44rpx;
+    border-radius: 4px;
+    width: 213rpx;
+    height: 213rpx;
+    float: left;
+}
+.cu-card.dynamic>.cu-item .only-img {
+  width: 45%;
+  height: 320rpx;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: relative;
+  border-radius: 6rpx;
+  float: left;
+  transform-style: flat;
+}
+.margin-lr-xs {
+  margin-left: 10rpx;
+  top: 6px;
+  position: relative;
+  margin-right: 10rpx;
+}
+.inputDataType
+{
+  position: relative;
+  padding: 0rpx 20rpx;
+  line-height: 30px;
+}
+.animationEn{
+  animation: fadeIn 1.5s 1;
+}
+
+.animationImg{
+  animation: zoomIn 1.5s 1;
+}
