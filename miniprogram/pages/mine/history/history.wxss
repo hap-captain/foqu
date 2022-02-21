@@ -1,0 +1,136 @@
+/* miniprogram/pages/mine/history/history.wxss */
+
+.bottomPage
+{
+  position: relative;
+  top:133rpx;
+  width: 100%;
+  height: auto;
+}
+.cu-list>.cu-item {
+  transition: all 0.1s ease-in-out 0s;
+  transform: translateX(0rpx);
+}
+.historyText
+{
+  position: absolute;
+    width: 61%;
+    height: auto;
+    left: 54rpx;
+    float: left;
+    overflow: hidden;
+    margin: 0 auto;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-height: 40rpx;
+    align-items: center;
+    justify-content: center;
+    
+}
+.setting{
+  position: fixed;
+    right: 36rpx;
+    top: 173rpx;
+    height: 60rpx;
+    z-index: 4;
+}
+.menuList{
+  position: relative;
+  top:330px;
+}
+.cu-list.menu>.cu-item.arrow {
+  padding-right: 10rpx;
+}
+.name{
+  top:0rpx;
+  position: relative;
+  text-align:center;
+  font-size:40rpx;
+  font-weight: 599;
+}
+.history{
+  position: fixed;
+  width: 100%;
+  top: 75px;
+  z-index: 4;
+}
+.bgPic{
+  position: fixed;
+  width: 100%;
+  height: 266px;
+  background-color: white;
+}
+.cu-list.menu-avatar {
+  /* overflow: hidden; */
+  height: auto;
+  position: relative;
+}
+.praAndCom{
+  position: relative;
+  right: 63rpx;
+  width: 184rpx;
+  bottom: -16rpx;
+}
+.pra{
+  position: relative;
+  float: left;
+}
+.box{
+  height: 50%;
+}
+.item{
+  position:relative;
+  top: 182rpx;
+  width: 100%;
+  height: auto;
+  border-bottom: #d9d9d9 solid 1rpx;
+  padding: 0;
+}
+.item .content{
+  background-color: #ffffff;
+  height: 100%;
+  position: relative;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s;
+}
+.item .del-button {
+  position: absolute;
+  right: -140rpx;
+  width: 140rpx;
+  height: 100%;
+  background-color: #df3448;
+  color: #fff;
+  top: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  font-size: 24rpx;
+}
+.item.active .content{
+  left: -140rpx;
+}
+.item.active .del-button{
+  right: 0;
+}
+.shadow-blur {
+  position: fixed;
+  width: 100%;
+  top: -62rpx;
+  height: 44%;
+}
+.bgWare
+{
+  position: fixed;
+  width: 100%;
+  height: 460rpx;
+  top: 0rpx;
+}
+.response {
+  width: 100%;
+  height: 460rpx;
+}

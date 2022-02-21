@@ -1,0 +1,44 @@
+<!--miniprogram/pages/side/club/detailPage/detailPage.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">社团介绍</view>
+</cu-custom>
+
+<view class="pageContainer">
+
+<view class='margin-xl bg-white padding-xl card animationEn'>
+  <view class='text-center margin-bottom text-lg '>{{connent.name}}</view>
+  <view class='text-content'>
+    <view class='text-center'>
+   <view class='margin-top-sm'>社团简介</view>
+   <view class='text-left'><text selectable="true">{{connent.introduce}}</text></view>
+
+   <view class='margin-top-sm'>活动图片</view>
+   <image wx:for="{{connent.pics}}" style="position:relative;width:100%;height:220px;border-radius: 5px;" src="{{item}}" bindtap="previewImage" mode="aspectFill" data-src="{{item}}"></image>
+
+   <view class='margin-top-sm' wx:if="{{connent.form}}">社团组成</view>
+   <view class='text-left'><text selectable="true">{{connent.form}}</text></view>
+
+<block wx:if="{{essay.length!=0}}">
+   <view class='margin-top-sm'>推文介绍</view>
+            <view class="list shadow-warp bg-white" wx:for="{{essay}}" wx:for-index="index" bindtap="inEssay" data-url="{{item.url}}" >
+                <view class="imgType">
+                    <image mode="aspectFill" src="{{item.src}}"></image>
+                </view>
+                <view>
+                <text class="titleType" >{{item.title}}</text>
+                <view class="titleType1">{{item.subtitle}}</view>
+                </view>
+            </view>
+</block>
+
+   <view class='margin-top-sm'>了解更多</view>
+   <image wx:for="{{connent.newPic}}" style="position:relative;width:100%;height:220px;border-radius: 5px;margin-bottom:20px" src="{{item}}" bindtap="previewImage" mode="aspectFit" data-src="{{item}}"></image>
+  </view>
+  </view>
+</view>
+
+<view class="footer animationEn">
+  © 创梦未来 2020-2021
+</view>
+</view>

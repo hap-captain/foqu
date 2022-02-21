@@ -1,0 +1,41 @@
+<!--pages/tips/tips.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">查询</view>
+</cu-custom>
+<view>  
+  <view class="item" wx:for="{{findList}}"> 
+    <view class="itemLeft">
+      <view class="itemPic">
+        <image mode="aspectFill" src="{{item.imgList[0]}}" data-src="{{item.imgList}}" bindtap="previewImage" wx:if="{{item.imgList.length}}"></image>
+        <image mode="aspectFill" src="../../../images/noHavePic.png" data-src="../../images/noHavePic.png" bindtap="previewImage" wx:if="{{!item.imgList.length}}"></image>
+      </view>
+      <view class="tag" wx:if="{{item.type == '寻找物品'}}">
+        <view class="{{!item.finish ? 'bg-gradual-orange' :'bg-grey'}} padding radius text-center shadow-blur">
+          <view class="text-lg" >{{!item.finish ? '寻物中' : '已找到'}}</view>
+        </view>
+      </view>
+      <view class="tag"  wx:if="{{item.type == '寻找失主'}}">
+        <view class="{{!item.finish ? 'bg-gradual-green' :'bg-grey'}} padding radius text-center shadow-blur">
+          <view class="text-lg">{{!item.finish ? '寻主中' : '已找到'}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="itemRight">
+      <view class="connent" bindtap="inDetail" data-id="{{item._id}}" data-item="{{item}}" data-openid="{{item._openid}}">
+        <view class="title">{{item.thingName}}</view>
+        <view class="describe">{{item.detailInfo}}</view>
+      </view>
+      <view class="footer">
+        <view class="share">
+          <button class="cu-btn icon" open-type="share" data-id="{{item._id}}" data-src="{{item.imgList[0]}}">
+            <text class="cuIcon-share "></text>
+          </button>
+        </view>
+        <view class="time">
+          <text class="timeType">{{tools.timeChn(item.time)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

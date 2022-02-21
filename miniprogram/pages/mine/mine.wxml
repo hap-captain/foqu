@@ -1,0 +1,54 @@
+
+
+<view class="pageContainer">
+  <scroll-view scroll-y class="scrollPage">
+    <view class="UCenter-bg" style="background-image: url({{picUrl}});">
+      <image bindtap="inSetting" src="{{avatarpic}}" class="png" mode="aspectFill"
+        style="height:75px;width:75px"></image>
+      <view bindtap="inSetting" class="text-xl">{{name}}
+      </view>
+      <view class="margin-top-sm">
+        <view class="cu-item signature">
+          <view class="content " bindtap="setSignature">
+            <text class="cuIcon-writefill text-olive"></text>
+            <text class="text-black signatureText ">{{signature}}</text>
+          </view>
+        </view>
+      </view>
+      
+      <button wx:if="{{!ifLogin}}" class="cu-btn block bg-red margin-tb-sm lg loginBtn" bindtap="login">点击登陆</button>
+
+      <modal hidden="{{hiddenmodalput}}" title="设置个性签名({{signature.length}}/23)" confirm-text="完成" cancel-text="取消"
+        bindcancel="cancelM" bindconfirm="confirmM">
+        <input bindinput='iName' type='text' placeholder="请输入个性签名..." auto-focus />
+      </modal>
+
+      <image
+        src="https://786c-xly-3g3sm5xb43ed094b-1305336006.tcb.qcloud.la/system/wave.gif?sign=7c48c589f74b5e6c008edbc0bcf96c9d&t=1621865772"
+        mode="scaleToFill" class="gif-wave"></image>
+    </view>
+
+    <view class="padding flex text-center text-grey bg-white ">
+      <radio-group class="block" bindchange="radioChange">
+        <view class="cu-form-group">
+          <text class="cuIcon-skinfill text-{{iconColor}}"></text>
+          <view class="title">四季随你</view>
+          <view style="position:relative;float:right;" wx:for="{{items}}" wx:key="{{item.value}}">
+            <radio class="{{item.color}} radio margin-left-sm" value="{{item.value}}" checked="{{item.checked}}">
+            </radio>
+          </view>
+        </view>
+      </radio-group>
+    </view>
+
+  </scroll-view>
+
+  <view class="cu-list grid col-3 padding ">
+    <view bindtap="inPage" class="cu-item" class=" shadow bg-white cu-item animation-reverse " wx:key  wx:for="{{list}}" wx:for-index="index" data-index="{{index}}">
+      <view class="cuIcon-{{item.icon}} text-{{iconColor}} " style="font-size:32px">
+      </view>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+</view>
+<view class="cu-tabbar-height"></view>

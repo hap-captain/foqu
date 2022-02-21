@@ -1,0 +1,45 @@
+<!-- 个人信息 -->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">个人信息</view>
+</cu-custom>
+
+
+<view class="list">
+  <picker bindchange="selectDepartment"
+    value="{{departmentsIndex}}" range="{{departments}}">
+    <view class="list-content">
+      <view class="list-letf">学院</view>
+      <view class="list-right">
+        <view class="list-right-text">{{myDepartment}}</view>  
+        <view class='arrow'></view>
+      </view>
+    </view>
+  </picker>
+
+	<picker bindchange="selectGrade"
+    value="{{gradesIndex}}" range="{{grades}}">
+    <view class="list-content">
+      <view class="list-letf">年级</view>
+      <view class="list-right">
+        <view class="list-right-text">{{myGrade}}</view>
+        <view class='arrow'></view>
+      </view>
+    </view>
+  </picker>
+
+  <picker bindchange="selectClass"
+    value="{{classesIndex}}" range="{{classes}}">
+    <view class="list-content" style="border-color: transparent;">
+      <view class="list-letf">班级</view>
+      <view class="list-right">
+        <view class="list-right-text">{{myClass}}</view>
+        <view class='arrow'></view>
+      </view>
+    </view>
+  </picker>
+
+</view>
+<button bindtap="saveInfo" type="primary">保存</button>
+
+<!-- <text class="save-tip">用户信息只允许修改10次 \n{{count==0?'':'已修改'+count+'次'}}{{count==3?'  若操作失误可在反馈处联系我们修改':''}}</text> -->

@@ -1,0 +1,120 @@
+/* miniprogram/pages/side/hometown/detailPage/detailPage.wxss */
+.pageContainer{
+  width: 100%;
+  min-height: 100vh;
+  background-color:#F8F8FF;
+}
+.animationEn{
+  animation: fadeInRight 1.5s 1;
+}
+.animationEnCard{
+  animation: zoomIn 3s 1;
+}
+.card{
+  box-shadow: 1px 1px 2px 0px #A9A9A9;
+    border-radius: 30rpx;
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer {
+  margin-bottom: 20rpx;
+  text-align: center;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  font-size: 30rpx;
+}
+.margin-top-sm {
+  margin-top: 52rpx;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.cu-list.menu1 {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 86%;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.titleList{
+  position: relative;
+  width: 40%;
+  height: 100px;
+  background-color: khaki;
+  float: left;
+}
+.list
+{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  /* float: left; */
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 17px;
+  background-color: white;
+  text-align: left;
+}
+.imgType
+{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.imgType image
+{
+  width: 100%;
+  height: 134px;
+  border-radius: 6px 6px 0px 0px;
+}
+.nav-li1 {
+  padding: 0rpx;
+  border-radius: 12rpx;
+  width: 45%;
+  margin: 0 2.5% 40rpx;
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.titleType
+{
+  position:relative;
+  font-size:13px;
+  font-weight:600;
+  margin-left: 10px;
+  padding-right: 10px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.titleType1
+{
+    position: relative;
+    font-size: 12px;
+    color: grey;
+    margin-left: 10px;
+    margin-bottom: 7px;
+    padding-right: 10px;
+}
+
+.cu-list.grid>.cu-item [class*=cuIcon] {
+  position: relative;
+  display: block;
+  margin-top: 0rpx;
+  width: 102%;
+  font-size: 67rpx;
+}
+.cu-list.grid.no-border {
+  padding: 0rpx 10rpx;
+}

@@ -1,0 +1,37 @@
+<!--miniprogram/pages/personPage/personPage.wxml-->
+<wxs module="tools" src="/utils/filter.wxs" />
+<!--自定义导航栏-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">动态空间</view>
+</cu-custom>
+
+<view style="background-color:#f8f8ff;height:auto" class="animationEn">
+
+<view class="cu-bar bg-white solid-bottom historyCard "  style="top:{{CustomBar}}px"  >
+  <view class='action'>
+    <text class='cuIcon-titles text-olive light '></text>历史动态
+  </view>
+  <text class="cuIcon-deletefill lg text-olive light" style="position:relative;float:right; margin-right:20px ;font-size: 18px;" bindtap="deleteBtn"></text>
+</view>
+
+<view class="cu-card dynamic dynamicCard shadow-lg " style="top:{{CustomBar}}px" wx:for="{{historyDymaic}}" wx:for-index="index" bindlongtap="deleteHistory" catchtap="inDetail" data-id="{{item._id}}" data-index="{{index}}">
+  <view class="cu-item  bg-white  " style="margin-right:0rpx;margin-left:0rpx;padding-bottom:15rpx">
+    <view class="text-gray text-sm text-right" > 
+      <text class="cuIcon-appreciatefill timeType text-cyan"><text class="text-gray"> {{item.dynamic.praise}}</text></text>
+      <text class="cuIcon-messagefill timeType text-cyan"><text class="text-gray"> {{item.commentNum}}</text></text>
+      <text class=" margin-lr-xs" >{{tools.timeChn(item.dynamic.time)}}</text>
+      <text wx:if="{{selectDele}}" class="cuIcon-deletefill lg text-orange" style="position:relative;margin-right:10px;top: 6px;margin-top:10px;font-size: 21px;"  catchtap="selectBtn" data-id="{{item._id}}"></text>
+    </view>
+    <view class="inputDataType">
+    <text>{{item.dynamic.inputData}}</text>
+    </view>
+    <view wx:if="{{item.dynamic.imgList.length}}">
+    <view wx:for="{{item.dynamic.imgList}}" wx:for-item="image" >
+    <image src="{{image}}" style="border-radius:20rpx" class="bg-img only-img animationImg" mode="aspectFill"></image>
+   </view>
+   </view>
+  </view>
+</view>
+
+</view>

@@ -1,0 +1,26 @@
+/* 
+此文件为开发者工具生成，生成时间: 2021/11/6 上午11:24:40
+使用方法：
+在 icon.wxss 文件末尾引入样式
+```
+@import "./icon-wxa-auto-dark.wxss";
+```
+ */
+
+@media (prefers-color-scheme: dark) {
+    @keyframes cuIcon-spin {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+
+        100% {
+            -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+        }
+    }
+
+    [class*="cuIcon-"] {
+        font-size: rgb(0, 0, 0);
+    }
+}

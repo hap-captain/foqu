@@ -1,0 +1,12 @@
+<view class="i-class   bg-white i-card {{ full ? 'i-card-full' : '' }} ">
+    <view class="i-class i-card-header "><slot name="header"></slot>
+        <view class="i-card-header-content">
+            <image class="i-card-header-thumb" class="user-avatar" mode="aspectFill" src="{{ thumb }}" wx:if="{{ thumb }}" />
+          <view class="userName"> {{ userName }} </view> 
+          <view class="userInfo"> {{ userInfo }} </view>
+        </view>
+        <view class="i-card-header-extra" wx:if="{{ time }}">{{ time }}</view>
+    </view>
+    <view class="i-class i-card-body"><slot name="content"></slot></view>
+    <view class="i-class i-card-footer"><slot name="footer"></slot></view>
+</view>

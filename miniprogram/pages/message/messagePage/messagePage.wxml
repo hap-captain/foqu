@@ -1,0 +1,22 @@
+<!--miniprogram/pages/mine/message/messagePage/messagePage.wxml-->
+<wxs module="tools" src="/utils/filter.wxs"/>
+<!--自定义导航栏-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">消息详情</view>
+</cu-custom>
+
+<view class="container">
+<view class="container1  bg-white card animation">
+  <view >
+  <text class="text-blue" style="font-size:18px;">{{message.title}}</text>
+  <view class="margin-top contentType">
+  <text>{{message.content}}</text>
+  </view>
+    </view>
+</view>
+
+<view class="footer">
+  © 创梦未来 2020-2021
+</view>
+</view>
