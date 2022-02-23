@@ -10,7 +10,7 @@
     <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}} " indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
         <swiper-item wx:for="{{swiperList}}" bindtap="viewPic" wx:key class="{{cardCur==index?'cur':''}}" data-index="{{index}}">
             <view class="swiper-item animation-fade" style="box-shadow:1px 1px 2px 0px 	#A9A9A9;  border-radius: 30rpx;">
-                <image src="{{item.swiperPic}}" mode="aspectFill"></image>
+                <image src="{{item}}" mode="aspectFill"></image>
             </view>
         </swiper-item>
     </swiper>
