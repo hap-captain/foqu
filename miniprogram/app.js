@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -27,8 +28,13 @@ App({
         dotNum: '0' //记录消息红点数目
       }
     this.ifLogin = false //标记是否登陆
-
     const db = wx.cloud.database()
+    this.dateNum = 100;
+    db.collection("system").doc("17e3426e621647591056c64043129a7c")
+    .get()
+    .then(res=>{
+      this.dateNum = res.data.dateNum;
+    })
     //获取用户openid并检查是否已经登陆
     if (wx.getStorageSync('openid')) {
       db.collection('usersInfformation')
@@ -78,5 +84,6 @@ App({
         }
       }
     })
-  }
+  },
+
 })
