@@ -2,12 +2,12 @@
 const db = wx.cloud.database()
 const _ = db.command
 const app = getApp()
-var listLenFind = 0;//记录"发现"页面列表长度
-var listLenHot = 0;//记录"热榜"页面列表长度
-var listLenFollow = 0; //新增，记录关注动态列表的长度
-var ret = {};
-var incNum = 0;
-var login = true;
+let listLenFind = 0;//记录"发现"页面列表长度
+let listLenHot = 0;//记录"热榜"页面列表长度
+let listLenFollow = 0; //新增，记录关注动态列表的长度
+let ret = {};
+let incNum = 0;
+let login = true;
 
 Page({
   data: {
@@ -21,14 +21,11 @@ Page({
     connent: [],
     hot: [],
     current: '0',
-    winWidth: 0,
-    winHeight: 0,
     praiseNow: "praise",
     PageCur: 'square',
     TabCur: 0,
     cardCur: 0,
     swiperList: [],
-    weekBefore: '',
     CustomBar: app.globalData.CustomBar,
     cardNum:false,
     launchImg: '',//火箭状态
@@ -67,23 +64,14 @@ Page({
   sortTag:''
   },
   onLoad(options) {
-    this.loadData(10, 0);
-    this.setData({
-      WinHeight: wx.getSystemInfoSync().windowHeight,
-      WinWidth: wx.getSystemInfoSync().windowWidth
-    })
-  
-    var that = this;
     wx.showLoading({
       title: '加载中...',
     })
+    this.loadData(10, 0);
     this.getSwiperList();
-    var now = new Date().getTime()//现在的时间
-    var weekBefore = (now - 3600 * 110000 * 24) //写出一周前的时间戳
-    this.data.weekBefore = weekBefore
-
   },
   onShow: function () {
+    let that=this;
     //从缓存获取红点数量
     if(wx.getStorageSync('dotsNum')&&wx.getStorageSync('dotsNum')!='0')
       {
@@ -103,14 +91,11 @@ Page({
       }
     
     if (this.data.TabCur == 0) {
-      this.refreshLove()
+      this.refreshLove();
     } 
      if (this.data.TabCur == 1) {
-      this.refreshLoveHot()
+      this.refreshLoveHot();
     }
-
-
-    var that=this
     if (this.data.navbarInitTop == 0) {
    
       //获取节点距离顶部的距离
@@ -139,7 +124,6 @@ Page({
   },
   onPullDownRefresh: function () {
     this.initColor()
-    var that = this;
     if (this.data.TabCur == 0) {
       this.setData({
         connent: [],
@@ -154,11 +138,6 @@ Page({
       this.loadHotData(5, 0);
     }
     wx.stopPullDownRefresh({})
-    wx.showToast({
-      title: '刷新成功',
-      icon: 'success',
-      duration: 800
-    })
   },
   onReachBottom: function () {
     var that=this
@@ -259,29 +238,15 @@ Page({
       return
     }
   },
-  //获取用户微信信息
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
-    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        this.setData({
-          "userData.userinfo.name": res.userInfo.nickName,
-          "userData.userinfo.avatarPic": res.userInfo.avatarUrl,
-          avatarPic: res.userInfo.avatarUrl,
-          "userData.userinfo.sex": (res.userInfo.gender ? '男' : '女'),
-        })
-      }
-    })
-  },
   //获取轮播图数据
   getSwiperList() {
     db.collection('swiper')
     .get()
     .then((res) => {
+    // 把图片链接提取出来放在数组中
+     let result = res.data.map(item => item = item.swiperPic)
       this.setData({
-        swiperList: res.data
+        swiperList: result
       })
       wx.hideLoading({
         success: (res) => {
@@ -306,12 +271,11 @@ Page({
         page: page
       }
     }).then(async res => {
-      var oldData = this.data.connent;
-      var newData = oldData.concat(res.result.data);
-      var that = this;
-      var dataWithNUm = await that.commentNum(newData)
+      let oldData = this.data.connent;
+      let newData = oldData.concat(res.result.data);
+      let that = this;
+      let dataWithNUm = await that.commentNum(newData)
       listLenFind = oldData.length;
-      console.log(dataWithNUm)
       this.setData({
         connent: dataWithNUm
       })
@@ -343,13 +307,13 @@ Page({
         num: num,
         plate: 2,
         page: page,
-        time: this.data.weekBefore
+        time: new Date().getTime() - 86400000 * app.dateNum
       }
     }).then(async res => {
-      var oldData = this.data.hot;
-      var newData = oldData.concat(res.result.data);
-      var that = this;
-      var dataWithNUm = await that.commentNum(newData)
+      let oldData = this.data.hot;
+      let newData = oldData.concat(res.result.data);
+      let that = this;
+      let dataWithNUm = await that.commentNum(newData)
       listLenHot = oldData.length;
       this.setData({
         hot: dataWithNUm
@@ -388,9 +352,9 @@ Page({
   },
   //点赞更新数据库
   dianzan(e) {
-    var id = e.currentTarget.dataset.id
-    var index = e.currentTarget.dataset.index
-    var that = this;
+    let id = e.currentTarget.dataset.id
+    let index = e.currentTarget.dataset.index
+    let that = this;
     this.showPraise(index);
     wx.cloud.callFunction({
       name: "praise",
