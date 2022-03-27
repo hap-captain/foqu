@@ -1,0 +1,178 @@
+<!--index.wxml-->
+<wxs module="tools" src="/utils/filter.wxs" />
+<!--自定义导航栏-->
+<cu-custom bgColor="bg-white " isBack="{{false}}">
+    <view slot="content">佛趣广场</view>
+</cu-custom>
+
+<!-- 吸顶tabs 已完成 -->
+<view class="tabsBox ">
+    <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}} " indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+        <swiper-item wx:for="{{swiperList}}" bindtap="viewPic" wx:key class="{{cardCur==index?'cur':''}}" data-index="{{index}}">
+            <view class="swiper-item animation-fade" style="box-shadow:1px 1px 2px 0px 	#A9A9A9;  border-radius: 30rpx;">
+                <image src="{{item}}" mode="aspectFill"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+
+    <view class="column {{isFixedTop?'fixed':''}} " id="navbar" style="top:{{CustomBar}}px;">
+        <view class="tabs">
+            <view bindtap="tabSelect" data-id="0" class="{{TabCur==0 ? 'nav-switch-style':''}} tabsItem">
+                <text style="top: 6px;">最新</text>
+                <view class="textLine" wx:if="{{TabCur==0}}"></view>
+            </view>
+
+            <view bindtap="tabSelect" data-id="1" class="{{TabCur==1 ? 'nav-switch-style':'' }} tabsItem">
+                <text style="top: 6px;">热门</text>
+                <view class="textLine" wx:if="{{TabCur==1}}"></view>
+            </view>
+
+        </view>
+
+        <view class="cu-bar search bg-white" bindtap="search">
+            <view class="search-form round">
+                <text class="cuIcon-search"></text>
+                <input type="text" placeholder="搜索" confirm-type="search"></input>
+            </view>
+        </view>
+    </view>
+    <view class="padding-sm flex flex-wrap" style="margin:0 auto;">
+  <view class="padding-xs" wx:for="{{ColorList}}" wx:key bindtap="sort" data-title="{{item.title}}" data-index="{{index}}">
+    <view class="cu-tag  {{item.name}}">{{item.title}}</view>
+  </view>
+</view>
+</view>
+
+    <!--内容板块-->
+    <view class="container1">
+        <view class="allPage ">
+            <!--发现内容卡片-->
+            <block wx:if="{{TabCur==0}}">
+                <view wx:for="{{connent}}" wx:for-index="index" class="animationEn" wx:key="index">
+                    <i-card wx:if="{{!item.dynamic.imgList.length}}" userName="{{item.dynamic.author.name}}" time="{{tools.timeChn(item.dynamic.time)}}" userInfo="{{item.dynamic.author.grade}} {{item.dynamic.author.place}}" thumb="{{item.dynamic.author.avatarPic}}">
+
+                        <view slot="header" class="header" catchtap="inPersonPage" data-openid="{{item._openid}}">
+                        </view>
+
+                        <view slot="content" bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}" data-tabCur="{{TabCur}}">
+                            <text selectable="true">{{item.dynamic.inputData}}
+                            </text>
+                        </view>
+
+                        <view i-class="messageAndPraise" slot="footer">
+                            <view class="footer">
+                                <view bindtap="dianzan" data-id="{{item._id}}" data-index="{{index}}">
+                                    <i-icon type="{{item.love? 'praise_fill':'praise'}}" />
+                                    <text class="praiseType">{{item.dynamic.praise}}</text>
+                                </view>
+                                <view bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}">
+                                    <i-icon type="message" />
+                                    <text class="praiseType">{{item.commentNum}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </i-card>
+
+
+                    <i-card wx:if="{{item.dynamic.imgList.length}}" userName="{{item.dynamic.author.name}}" time="{{tools.timeChn(item.dynamic.time)}}" userInfo="{{item.dynamic.author.grade}} {{item.dynamic.author.place}}" thumb="{{item.dynamic.author.avatarPic}}" wx:for-index="index0">
+                        <view slot="header" class="header" bindtap="inPersonPage" data-openid="{{item._openid}}"></view>
+                        <view slot="content" bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}" data-tabCur="{{TabCur}}">
+                            <view class="havePic">
+                                <text selectable="true">{{item.dynamic.inputData}}
+                                </text>
+                            </view>
+
+                            <view>
+                                <image mode="aspectFill" src='{{item.dynamic.imgList[0]}}' class="pic"></image>
+                            </view>
+                        </view>
+                        <view i-class="messageAndPraise" slot="footer">
+                            <view class="footer">
+                                <view bindtap="dianzan" data-id="{{item._id}}" data-index="{{index}}">
+                                    <i-icon type="{{item.love? 'praise_fill':'praise'}}" />
+                                    <text class="praiseType">{{item.dynamic.praise}}</text>
+                                </view>
+                                <view bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}">
+                                    <i-icon type="message" />
+                                    <text class="praiseType">{{item.commentNum}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </i-card>
+
+
+
+                </view>
+            </block>
+
+            <!--热点内容卡片-->
+            <block wx:if="{{TabCur==1}}">
+                <view wx:for="{{hot}}" wx:for-index="index" class="animationEn" wx:key="index">
+                    <i-card wx:if="{{!item.dynamic.imgList.length}}" userName="{{item.dynamic.author.name}}" time="{{tools.timeChn(item.dynamic.time)}}" userInfo="{{item.dynamic.author.grade}} {{item.dynamic.author.place}}" thumb="{{item.dynamic.author.avatarPic}}">
+
+                        <view slot="header" class="header" catchtap="inPersonPage" data-openid="{{item._openid}}">
+                        </view>
+
+                        <view slot="content" bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}" data-tabCur="{{TabCur}}">
+                            <text selectable="true">{{item.dynamic.inputData}}
+                            </text>
+                        </view>
+
+                        <view i-class="messageAndPraise" slot="footer">
+                            <view class="footer">
+                                <view bindtap="dianzan" data-id="{{item._id}}" data-index="{{index}}">
+                                    <i-icon type="{{item.love? 'praise_fill':'praise'}}" />
+                                    <text class="praiseType">{{item.dynamic.praise}}</text>
+                                </view>
+                                <view bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}">
+                                    <i-icon type="message" />
+                                    <text class="praiseType">{{item.commentNum}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </i-card>
+
+
+                    <i-card wx:if="{{item.dynamic.imgList.length}}" userName="{{item.dynamic.author.name}}" time="{{tools.timeChn(item.dynamic.time)}}" userInfo="{{item.dynamic.author.grade}} {{item.dynamic.author.place}}" thumb="{{item.dynamic.author.avatarPic}}" wx:for-index="index0">
+                        <view slot="header" class="header" catchtap="inPersonPage" data-openid="{{item._openid}}">
+                        </view>
+                        <view slot="content" bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}" data-tabCur="{{TabCur}}">
+                            <view class="havePic">
+                                <text selectable="true">{{item.dynamic.inputData}}
+                                </text>
+                            </view>
+                            <view>
+                                <image mode="aspectFill" src='{{item.dynamic.imgList[0]}}' class="pic"></image>
+                            </view>
+                        </view>
+                        <view i-class="messageAndPraise" slot="footer">
+                            <view class="footer">
+                                <view bindtap="dianzan" data-id="{{item._id}}" data-index="{{index}}">
+                                    <i-icon type="{{item.love? 'praise_fill':'praise'}}" />
+                                    <text class="praiseType">{{item.dynamic.praise}}</text>
+                                </view>
+                                <view bindtap="inDetail" data-id="{{item._id}}" data-love="{{item.love}}" data-openid="{{item._openid}}" data-index="{{index}}">
+                                    <i-icon type="message" />
+                                    <text class="praiseType">{{item.commentNum}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </i-card>
+                </view>
+            </block>
+        </view>
+    </view>
+
+
+<view wx:if="{{cardNum}}">
+    <view class="toTop text-center {{cardNum == true ?'animationLaunchStar':'animationLaunchEnd'}}" bindtap="toTop">
+        <view class="animationTop">
+            <image src="{{launchImg}}" style="position:ralative; width: 45px;height: 45px;"></image>
+            <view style="font-size:10px;position:relative;top:-5px" wx:if="{{launchImg != ''}}"> 回到顶部</view>
+        </view>
+    </view>
+</view>
+
+<view class="putTag {{putTag == true ?'animationLaunchStar':'animationLaunchEnd'}}" bindtap="inPut" wx:if="{{putTag}}">
+    <image src="{{putImg}}"></image>
+</view>
