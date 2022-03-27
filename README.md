@@ -23,7 +23,6 @@
 ![消息](https://s3.bmp.ovh/imgs/2022/03/f66b301821eef283.jpg)
 - ### 我的
 ![我的](https://s3.bmp.ovh/imgs/2022/03/218c321abc19d165.jpg)
-
 ### 使用方法
 
 1. 在[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)中打开项目
