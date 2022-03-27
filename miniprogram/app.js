@@ -5,9 +5,7 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
       wx.cloud.init({
-        //测试环境：testfosu-8gldhnb2685dc72f
-        //线上环境：fosusquare-9gwq61i6a0c9d216
-        env: 'fosusquare-9gwq61i6a0c9d216',
+        env: 'testfosu-8gldhnb2685dc72f',
         traceUser: true
       })
     }
